@@ -9,7 +9,7 @@ Thanks to : Krikor Hajian, Gia Pham, Kyle Rodgers, Ryan Geckers, etc
 
 
 --------------- U P D A T E   H I S T O R Y ----------------------
-
+Version 7.5.1
 Version 7.5.0:
 -- Update sticky note for N90 amd neighbor ARTCC for crossing restrictions
 -- Update some descend via arrival command.
