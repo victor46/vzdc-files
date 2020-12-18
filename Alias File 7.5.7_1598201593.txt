@@ -9,10 +9,25 @@ Thanks to : Krikor Hajian, Gia Pham, Kyle Rodgers, Ryan Geckers, etc
 
 
 --------------- U P D A T E   H I S T O R Y ----------------------
-
-Version 7.5.0:
--- Update sticky note for N90 amd neighbor ARTCC for crossing restrictions
--- Update some descend via arrival command.
+Version 7.5.7:
+-- Added autotrack commands for vERAM
+-- Fixed crossing restrictions phraseology
+-- Added new ZBW LOA items
+Version 7.5.6:
+-- Added commands to open external links i.e. skyvector, flightaware, and SOPs, etc
+-- Updated PDC for call for taxi or call when hold short Z options
+Version 7.5.5:
+-- Updated SID/STAR with AIRAC 2002
+-- Change  "Climb via SID" to "Maintain" for SIDs without altitude
+Version 7.5.4:
+-- Update PDC phraseology
+Version 7.5.3:
+-- Adding DOV altimeter to phraselogy list
+-- Fix the command some VFR clearance
+-- Fix "cross ... at" to " cross .... at and maintain ......"
+-- Fix numerous RDU clearance issues.
+Version 7.5.2:
+-- Re-phrase ILS that cleared direct into IAF including CAPSS and MIDDY arrivals
 Version 7.5.1:
 -- Update numerous minor phraseology.
 -- Update PHL JIMMS# arrival to use the DOV altimeter instead of BWI altimeter
@@ -27,25 +42,9 @@ Version 7.5.1:
 -- Adding numerous IFR release at uncontrolled airfield.
 -- Adding BRB clearance.
 -- Removing some signing off clearance and replace it with better phraselogy.
-Version 7.5.2:
--- Re-phrase ILS that cleared direct into IAF including CAPSS and MIDDY arrivals
-Version 7.5.3:
--- Adding DOV altimeter to phraselogy list
--- Fix the command some VFR clearance
--- Fix "cross ... at" to " cross .... at and maintain ......"
--- Fix numerous RDU clearance issues.
-Version 7.5.4:
--- Update PDC phraseology
-Version 7.5.5:
--- Updated SID/STAR with AIRAC 2002
--- Change  "Climb via SID" to "Maintain" for SIDs without altitude
-Version 7.5.6:
--- Added commands to open external links i.e. skyvector, flightaware, and SOPs, etc
--- Updated PDC for call for taxi or call when hold short Z options
-Version 7.5.7:
--- Added autotrack commands for vERAM
--- Fixed crossing restrictions phraseology
--- Added new ZBW LOA items
+Version 7.5.0:
+-- Update sticky note for N90 amd neighbor ARTCC for crossing restrictions
+-- Update some descend via arrival command.
 
 ------------------
 SCOPE SETUP
