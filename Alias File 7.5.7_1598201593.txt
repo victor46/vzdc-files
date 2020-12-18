@@ -2,10 +2,10 @@
 
 [Version]: 7.5.7
 
-Last Update : Junzhe Yan (8/23/2020)
+Last Update : Sullivan Porcaro (12/17/2020)
 ----------------- CREDITS --------------------
 
-Thanks to : Krikor Hajian, Gia Pham, Kyle Rodgers, Ryan Geckers, Sullivan Porcaro 
+Thanks to : Krikor Hajian, Gia Pham, Kyle Rodgers, Ryan Geckers, Sullivan Porcaro. 
 
 
 --------------- U P D A T E   H I S T O R Y ----------------------
