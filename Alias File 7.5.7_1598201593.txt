@@ -1,0 +1,983 @@
+////// Virtual Washington ARTCC (vZDC) Alias File for VRC \\\\\\
+
+[Version]: 7.5.7
+
+Last Update : Junzhe Yan (8/23/2020)
+----------------- CREDITS --------------------
+
+Thanks to : Krikor Hajian, Gia Pham, Kyle Rodgers, Ryan Geckers, etc 
+
+
+--------------- U P D A T E   H I S T O R Y ----------------------
+
+Version 7.5.0:
+-- Update sticky note for N90 amd neighbor ARTCC for crossing restrictions
+-- Update some descend via arrival command.
+Version 7.5.1:
+-- Update numerous minor phraseology.
+-- Update PHL JIMMS# arrival to use the DOV altimeter instead of BWI altimeter
+-- Update MAPEL1 into MAPEL2
+-- Adding basic ODP departure.
+-- Adding squawk code readback
+-- Adding numerous VFR phraseology.
+-- Adding visual seperation for target resolution.
+-- Adding numerous speed items
+-- Adding numerous reasons to vector aircrafts.
+-- Adding practice approach for VFR targets.
+-- Adding numerous IFR release at uncontrolled airfield.
+-- Adding BRB clearance.
+-- Removing some signing off clearance and replace it with better phraselogy.
+Version 7.5.2:
+-- Re-phrase ILS that cleared direct into IAF including CAPSS and MIDDY arrivals
+Version 7.5.3:
+-- Adding DOV altimeter to phraselogy list
+-- Fix the command some VFR clearance
+-- Fix "cross ... at" to " cross .... at and maintain ......"
+-- Fix numerous RDU clearance issues.
+Version 7.5.4:
+-- Update PDC phraseology
+Version 7.5.5:
+-- Updated SID/STAR with AIRAC 2002
+-- Change  "Climb via SID" to "Maintain" for SIDs without altitude
+Version 7.5.6:
+-- Added commands to open external links i.e. skyvector, flightaware, and SOPs, etc
+-- Updated PDC for call for taxi or call when hold short Z options
+Version 7.5.7:
+-- Added autotrack commands for vERAM
+-- Fixed crossing restrictions phraseology
+-- Added new ZBW LOA items
+
+------------------
+SCOPE SETUP
+------------------
+// Center windows
+.c1 .center /1 $1
+.c2 .center /2 $1
+.c3 .center /3 $1
+.c4 .center /4 $1
+.c5 .center /5 $1
+.c6 .center /6 $1
+.c7 .center /7 $1
+.c8 .center /8 $1
+.c9 .center /9 $1
+
+// Fixes in different windows
+.f2 .FF /2 $1
+.f3 .FF /3 $1
+.f4 .FF /4 $1
+.f5 .FF /5 $1
+.f6 .FF /6 $1
+.f7 .FF /7 $1
+.f8 .FF /8 $1
+.f9 .FF /9 $1
+
+
+.zdcvis .vis LRR18 LRR52 LRR34 LRR35
+.ZDCvor .FV COL RBV ARD OOD VCN DQO MXE ACY SIE ATR ENO SBY SWL CCV ORF ECG RBX TYI ISO EWN ILM  CRE FLG LBT FAY SDZ LIB RDU GSO LVL LYH ROA PSK MOL ESL MGW EKN CKB HVQ BKW  LWB HGR MRB EMI FDK AML OTT RIC HPW PXT ESL LDN CSN  IHD JST SBV DAN GVE FAK ESL  BRV BWI PPM CYN LRP HCM CVI FKN JFK LGA THS FLO CRE CAE 
+
+------------------
+CLEARANCES
+------------------
+.pref preferred route to $arr is $route - can you accept?
+
+.acy1 cleared to $arr airport; ATLANTIC CITY 1 departure, radar vectors $1, then as filed. Maintain 2,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.bwiterpz cleared to $arr airport; TERPZ6 departure, $1 transition, then as filed. Climb via SID. Departure frequency $freq($2), squawk $squawk.
+
+.bwifixet cleared to $arr airport; FIXET2 departure, $1 transition, then as filed. Climb via SID. Departure frequency $freq($2), squawk $squawk.
+
+.bwiconle cleared to $arr airport; CONLE3 departure, $1 transition, then as filed. Climb via SID. Departure frequency $freq($2), squawk $squawk.
+
+.bwipaleo cleared to $arr airport; PALEO3 departure, radar vectors $1, then as filed. Maintain 4,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.bwiswann cleared to $arr airport; SWANN3 departure, radar vectors $1, then as filed. Maintain 4,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcanorth cleared to $arr airport. Depart northwest via initial heading 320, radar vectors $1, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure freqeuncy $freq($2), squawk $squawk.
+
+.dcasouth cleared to $arr airport. Depart south via initial heading 185, radar vectors $1, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure freqeuncy $freq($2), squawk $squawk.
+
+.dcanatnl cleared to $arr airport; NATIONAL7 departure, radar vectors $1, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcaboock cleared to $arr airport; BOOCK3 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcacltch cleared to $arr airport; CLTCH2 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcadoctr cleared to $arr airport; DOCTR4 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcaholtb cleared to $arr airport; HOLTB1 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcahorto cleared to $arr airport; HORTO3 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcajdubb cleared to $arr airport; JDUBB2 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcarebll cleared to $arr airport; REBLL4 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcascram cleared to $arr airport; SCRAM4 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcasooki cleared to $arr airport; SOOKI4 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.dcawyngs cleared to $arr airport; WYNGS4 departure, $1 transition, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.faymty cleared to $arr airport; MOUNTY3 departure, radar vectors $1, then as filed. Maintain 2,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.hefarsnl cleared to $arr airport; ARSENAL5 departure, $1 transition, then as filed. Climb via SID. Departure frequency $freq($2), squawk $squawk.
+
+.hefhiich cleared to $arr airport; HIICH2 departure, $1 transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.hefgabbe cleared to $arr airport; GABBE1 departure, $1 transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.iadcptal cleared to $arr airport; CAPITAL1 departure, radar vectors $1, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.iadrnldi cleared to the $arr airport; RNLDI4 departure, OTTO transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.iadbunzz cleared to the $arr airport; BUNZZ3 departure, RAMAY transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.iadwooly cleared to the $arr airport; WOOLY1 departure,radar vector RAZZA, $1 transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.iadcltch cleared to the $arr airport; CLTCH2 departure,radar vector BUTRZ, $1 transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.iadjcoby cleared to the $arr airport; JCOBY3 departure,radar vector RIGNZ, $1 transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.iadjeres cleared to the $arr airport; JERES2 departure,radar vector IDORE, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.iadmcray cleared to the $arr airport; MCRAY2 departure,radar vector HAYGR, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.iadscram cleared to the $arr airport; SCRAM4 departure,radar vector POOCH, LYNCHBURG transition, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.orfkissr cleared to $arr airport; KISSR3 departure, radar vectors $1, then as filed. Maintain 4,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk.
+
+.phfhenry cleared to $arr airport; HENRY3 departure, radar vectors $1, then as filed. Maintain 2,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdutarl cleared to $arr airport; TAR HEEL 9 departure, $1 transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdushprd cleared to $arr airport; SHPRD3 departure, radar vector CATAR, SHPRD transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk
+
+.rdurozbo cleared to $arr airport; ROZBO3 departure, radar vector EAGER, $1 transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdu cleared to $arr airport; RALEIGH8 departure, radar vectors $1, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdupackk cleared to $arr airport; PACKK8 departure, $1 transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdubd cleared to $arr airport; BLUE DEVIL 6 departure, $1 transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rduoxfrd cleared to $arr airport; OXFRD3 departure, radar vector PEAVY, Flat Rock transition, then as filed. Climb via SID. Departure frequency $freq($1), squawk $squawk
+
+.rdulwood cleared to $arr airport; Long Wood 3 departure, radar vector FOCAL, $1 transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rduhuric cleared to $arr airport; HURIC3 departure, radar vector STRMY, Tar River transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rduhookz cleared to $arr airport; HOOKZ3 departure, radar vector FITON, FAYETTEVILLE transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdufay cleared to $arr airport; FAYETTEVILLE 4 departure, $1 transition, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.rdubexgo cleared to $arr airport; BEXGO3 departure, radar vector AIMHI, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk
+
+.roabufiy cleared to $arr airport; BUFIY3 departure, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.roadixxy cleared to $arr airport; DIXXY8 departure, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.roamonat cleared to $arr airport; MONAT3 departure, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.roascuta cleared to $arr airport; SCUTA3 departure, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.roahokee cleared to $arr airport; HOKEE3 departure, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($1), squawk $squawk.
+
+.basic2 cleared to $arr airport; radar vectors $1, then as filed. Maintain 2,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.basic3 cleared to $arr airport; radar vectors $1, then as filed. Maintain 3,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.basic4 cleared to $arr airport; radar vectors $1, then as filed. Maintain 4,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+ 
+.basic5 cleared to $arr airport; radar vectors $1, then as filed. Maintain 5,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.basic6 cleared to $arr airport; radar vectors $1, then as filed. Maintain 6,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.basic7 cleared to $arr airport; radar vectors $1, then as filed. Maintain 7,000, expect $cruise 10 minutes after departure. Departure frequency $freq($2), squawk $squawk
+
+.basicrnavdp cleared to $arr airport; $1 departure, $2 transition, then as filed. Maintain $3, expect $cruise 10 minutes after departure. Departure frequency $freq($4), squawk $squawk
+
+.basicpnavdp cleared to $arr airport; $1 departure, radar vectors $2, then as filed. Maintain $3, expect $cruise 10 minutes after departure. Departure frequency $freq($4), squawk $squawk
+
+.codp cleared to $arr, depart via the $dep obstacle departure procedure.
+
+.codpr cleared to $arr, depart via the $dep runway $1 obstacle departure procedure.
+
+----------------------
+MISC. CLEARANCE ITEMS
+----------------------
+
+.cor clearance on request, standby, number $1 .
+
+.clrrdy clearance available, advise when ready to copy.
+
+.clrasfiled cleared to $arr as filed, squawk $squawk .
+
+
+--------------------
+TRANSPONDER ITEMS
+--------------------
+
+.sqid $radioname($1), squawk $squawk and ident.
+
+.sq $radioname($1), reset transponder, squawk $squawk
+
+.vsq verify squawking $squawk.
+
+.id ident.
+
+.sn squawk normal.
+
+.sqa squawk altitude.
+
+.sqc squawk mode Charlie.
+
+.sb squawk standby.
+
+.vsq verify squawking $squawk
+
+.sqalt squawk $squawk, and if your altitude reporting equipment is turned off, squawk altitude
+
+--------------------
+GROUND ITEMS
+--------------------
+
+.sqread squawk readback correct, expect runway $uc($1) for departure, advise ready to taxi.
+
+.read readback correct, advise ready to taxi. Expect runway $1 for departure, altimeter $altim($dep).
+
+.rbtaxi readback correct, advise ready to taxi. Expect runway $1 for departure, altimeter $altim($dep).
+
+.rbpush radback correct, advise ready to push. Expect runway $1 for departure, altimeter $altim($dep).
+
+.taxi runway $uc($1), taxi via $uc($2) $uc($3) $uc($4) $uc($5) $uc($6) $uc($7) $uc($8) $uc($9); wind $wind($dep), altimeter $altim($dep).
+
+.taxi@ runway $uc($1) at $uc($2), taxi via $uc($3) $uc($4) $uc($5) $uc($6) $uc($7) $uc($8) $uc($9); wind $wind($dep), altimeter $altim($dep).
+
+.xrwy cross runway $1.
+
+.taxihs runway $1, taxi via $2 $3 $4 $5, hold short runway $6; altimeter $altim($dep).
+
+.taxihst runway $1, taxi via $2 $3 $4 $5, hold short taxiway $6; altimeter $altim($dep).
+
+.txg taxi to your gate, G'Day
+
+.txp taxi to parking, G'Day
+
+.ready Contact $radioname($1),frequency $freq($1) for push and taxi with appropirate squawk code and gate number.
+
+--------------------
+TOWER ITEMS
+--------------------
+
+.to wind $wind($dep), runway $1, cleared for take off.
+
+.tohdg wind $wind($dep), on departure fly heading $1, runway $2, cleared for take off.
+
+.torwy fly runway heading, wind $wind($dep), runway $1, cleared for takeoff
+
+.cdep Contact Departure, seeyah!
+
+.luaw runway $1, line up and wait.
+
+.hstaxiway hold short $1.
+
+.hsrunway hold short $1.
+
+.land wind $wind($arr), runway $1, cleared to land.
+
+---------------------
+SPEED ITEMS
+---------------------
+
+.ispd increase speed to $1
+
+.rspd reduce speed to $1
+
+.im increase mach to $1
+
+.dmach decrease mach to $1
+
+.spd maintain $1 knots
+
+.mmach maintain mach $1
+
+.appspd reduce to final approach speed
+
+.mfs maintain maximum forward speed
+
+.sps maintain slowest practical speed
+
+.ns resume normal speed
+
+.ps resume published speed
+
+---------------------
+RADAR CONTACT
+---------------------
+
+.rcp radar contact $dist($1) miles $bear($1) of $uc($1)
+
+.rcpcm radar contact $dist($1) miles $bear($1) of $uc($1), climb and maintain $2
+
+.rca $radioname($1), radar contact, say altitude.
+
+.rcair $radioname($1), radar contact $dist($1) miles $bear($1) of $uc($1) at $calt.
+
+.rc $radioname($1) ,radar contact
+
+.rcl radar contact lost
+
+---------------------
+DEPARTURE ITEMS
+---------------------
+
+.pd proceed direct $1
+
+.cl cleared direct $1
+
+.clrdct cleared direct $1
+
+.wa whenable
+
+---------------------
+VECTOR ITEMS
+---------------------
+
+.short if you’d like a little shortcut, cleared direct $uc($1)
+
+.tr turn right heading $1
+
+.tl turn left heading $1
+
+.tld turn left direct $1
+
+.trd turn right direct $1
+
+.fh fly heading $1
+
+.dpfix depart $1 heading $2
+
+.vf vector to final approach course
+
+.vd vector for descent.
+
+.vt vector for traffic.
+
+.vac vector across final.
+
+.vac2 this vector will take you slightly across final.
+
+--------------------
+ALTITUDE ITEMS
+--------------------
+
+.mb maintain block $1 through $2
+
+.comply comply with restrictions
+
+.cv climb via SID 
+
+.cvxm climb via SID except maintain $1
+
+.cvxa climb via SID except cross $uc($1) at or above $2
+
+.cvxb climb via SID except cross $uc($1) at or below $2
+
+.cm climb and maintain $1
+
+.dm descend and maintain $1
+
+.m maintain $1
+
+.temp amend altitude, maintain $temp
+
+.crs climb and maintain $cruise
+
+.dvia descend via the $1 arrival
+
+	| | ZNY  ALTITUDE ITEM | |
+	
+.hoggs180 cross HOGGS at FL180.
+
+.hoggs190 cross HOGGS at FL190.
+
+.hoggs200 cross HOGGS at FL200.
+
+.ridgy cross RIDGY at FL270.
+
+.shona cross SHONA at and maintain FL310. 
+
+.vcn cross Cedar Lake (VCN) at and maintain 8000. Philly altimeter $altim(KPHL).
+
+.camrn cross CAMRN at and maintain 11000 and 250knts, Kennedy altimeter $altim(KJFK).
+
+.dylin descend via the DYLIN4 arrival, Philly altimeter $altim(KPHL).
+
+.korry descend via the KORRY4 arrival, Philly altimeter $altim(KPHL).
+
+.phlbo descend via the PHLBO3 arrival, Philly altimeter $altim(KPHL).
+
+.somto cross SOMTO at and maintain 11000, Philly altimeter $altim(KPHL).
+
+.jaike cross JAIKE at and maintain 13000, Philly altimeter $altim(KPHL).
+
+.jaybo cross JAYBO at and maintain 15000, Baltimore altimeter $altim(KBWI).
+
+.gared cross GARED at and maintain 13000, Baltimore altimeter $altim(KBWI).
+
+.radds cross RADDS at and maintain 15000, Philly altimeter $altim(KDOV).
+
+.hekmn cross HEKMN at and maintain 9000, Philly altimeter $altim(KPHL).
+
+.essso cross ESSSO at and maintain 10000 250knts, Philly alimeter $altim(KPHL).
+		
+		| | ZTL  ALTITUDE ITEM | |
+
+.mayos cross MAYOS at and maintain FL220.
+
+.bluej cross BLUEJ at and maintain FL280.
+
+.ivanema cross MAYOS at and maintain FL240.
+
+.chsly descend via the CHSLY4 arrival, CLT landing $1. CLT altimeter $altim(KCLT).
+
+.henby cross HENBY at and maintain $1. CLT altimeter $altim(KCLT).
+
+	| | IAD ALTITUDE ITEM | |
+
+.lirch Cross LIRCH at and maintain 14000, IAD altimeter $altim(KIAD).
+
+.dafix Cross DAFIX at and maintain 12000, IAD altimeter $altim(KIAD).
+
+.hyper1 Cross HYPER at and maitain 10000, IAD altimeter $altim(KIAD).
+
+.hyper descend via the HYPER7 arrival, IAD landing $1. IAD altimeter $altim(KIAD).
+
+.hyperILS descend via the HYPER7 arrival, IAD landing $1, at $2 cleared ILS runway $3 . IAD altimeter $altim(KIAD).
+
+.leggo descend via the LEGGO5 arrival, IAD landing $1. IAD altimeter $altim(KIAD).
+
+.leggoILS descend via the LEGGO5 arrival, IAD landing $1, at $2 cleared ILS runway $3 . IAD altimeter $altim(KIAD).
+
+.mapel descend via the MAPEL2 arrival, IAD landing $1. IAD altimeter $altim(KIAD).
+
+.mapelILS descend via the MAPEL2 arrival, IAD landing $1, at $2 cleared ILS runway $3 . IAD altimeter $altim(KIAD).
+
+.cavlr descend via the CAVLR3 arrival, IAD landing $1. IAD altimeter $altim(KIAD).
+
+.wigol descend via the WIGOL1 arrival, IAD landing $1. IAD altimeter $altim(KIAD).
+
+.gibbz descend via the GIBBZ3 arrival, IAD landing $1. IAD altimeter $altim(KIAD).
+
+	| | DCA ALTITUDE ITEM | |
+	
+.capss descend via the CAPSS3 arrival, DCA landing $1. DCA altimeter $altim(KDCA).	
+
+.capssILS cross KATRN at or above 2500. Cleared ILS runway 1 approach . DCA altimeter $altim(KDCA).
+
+.bal cross Baltimore (BAL) at and maintain 10000 250knts, DCA landing $1. DCA altimeter $altim(KDCA).
+
+.ojaay cross OJAAY at and maintain 10000 250knts, DCA landing $1. DCA altimeter $altim(KDCA)
+
+.deale descend via the DEALE3 arrival, DCA landing $1. DCA altimeter $altim(KDCA).
+
+.frdmm descend via the FRDMM5 arrival, DCA landing $1. DCA altimeter $altim(KDCA).
+
+.nummy descend via the NUMMY3 arrival, DCA landing $1. DCA altimeter $altim(KDCA).
+
+.trups descend via the TRUPS4 arrival, DCA landing $1. DCA altimeter $altim(KDCA).
+
+	| | BWI ALTITUDE ITEM | |
+
+.anthm descend via the ANTHM3 arrival, BWI landing $1. BWI altimeter $altim(KBWI).
+
+.miidy descend via the MIIDY2 arrival, BWI landing $1. BWI altimeter $altim(KBWI).
+
+.miidyILS cross JANNS at or above 4000, cleared ILS runway 33L approach. BWI altimeter $altim(KBWI).
+
+.ravnn descend via the RAVNN6 arrival, BWI landing $1. BWI altimeter $altim(KBWI).
+
+.ripkn descend via the RIPKN2 arrival, BWI landing $1. BWI altimeter $altim(KBWI).
+
+.trish descend via the TRISH3 arrival, BWI landing $1. BWI altimeter $altim(KBWI).
+
+.ruane cross RUANE at and maintain 11000, BWI landing $1. BWI altimeter $altim(KBWI).
+
+	| | RDU ALTITUDE ITEM | |
+
+.aldan descend via the ALDAN2 arrival, RDU landing $1. RDU altimeter $altim(KRDU).
+
+.argal cross ARGAL at  and maintain 10000 , RDU landing $1. RDU altimeter $altim(KRDU).
+
+.blogs descend via the BLOGS2 arrival, RDU landing $1. RDU altimeter $altim(KRDU).
+
+.brade cross BRADE at and maintain 11000 250knts , RDU landing $1. RDU altimeter $altim(KRDU).
+
+.buzzy cross BUZZY at and maintain  11000 250knts , RDU landing $1. RDU altimeter $altim(KRDU).
+
+.karoo descend via the KAROO2 arrival, RDU landing $1. RDU altimeter $altim(KRDU).
+
+.malnr descend via the MALNR4 arrival, RDU landing $1. RDU altimeter $altim(KRDU).
+
+.sbvne cross ALDAN at and maintain  12000 , RDU landing $1. RDU altimeter $altim(KRDU).
+
+.sbvsw cross ALDAN at and maintain  10000 250knts , RDU landing $1. RDU altimeter $altim(KRDU).
+
+	| | ORF ALTITUDE ITEM | |
+
+.broze cross BROZE at and maitain FL190.
+
+.drone cross DRONE at and maintain  11000 , ORF landing $1. ORF altimeter $altim(KORF).
+
+.terks cross RUSSL at and maintain  16000 , ORF landing $1. ORF altimeter $altim(KORF).
+
+.russl cross RUSSL at and maintain 16000 , ORF landing $1. ORF altimeter $altim(KORF).
+
+.hcm cross HCM at and maintain  14000 , ORF landing $1. ORF altimeter $altim(KORF).
+
+	| | ZBW  ALTITUDE ITEM | |
+	
+.newes  cross NEWES at FL270.
+
+
+-------------------
+APPROACH ITEMS
+-------------------
+.vissep maintain visual separation
+
+.vissep2 traffic has you in sight and will maintain visual separation
+
+.nofac traffic no factor
+
+.expils expect ILS runway $1 approach, altimeter $altim($arr)
+
+.expvis expect visual approach runway $1, altimeter $altim($arr)
+
+.explda expect LDA runway $1 approach, altimeter $altim($arr)
+
+.expldadme expect  LDA/DME runway $1 approach, altim $altim($arr)
+
+.expvor expect VOR runway $1 approach, altimeter $altim($arr)
+
+.expvordme expect VOR/DME rwy $1 approach, altim $altim($arr)
+
+.exploc expect Localizer runway $1 approach, altimeter $altim($arr)
+
+.expgps expect GPS runway $1 approach, altimeter $altim($arr)
+
+.expriv expect River Visual runway 19 approach, altim $altim(KDCA)
+
+.expmtv expect Mt. Vernon Visual runway 1 approach, altimeter $altim(KDCA)
+
+.dist $dist($1) miles from $1
+
+.loc join the runway $1 localizer 
+
+.appcourse join the approach course, runway $1
+
+.fullils $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared ILS runway $5 approach.
+
+.shortils $dist($1) from $1, maintain $2 until established, cleared ILS runway $3 approach.
+
+.fullloc $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared LOC runway $5 approach.
+
+.fullvor $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared VOR runway $5 approach.
+
+.fullvordme  $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared VOR/DME runway $5 approach.
+
+.fulllda  $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared LDA runway $5 approach.
+
+.fullldadme  $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared LDA/DME runway $5 approach.
+
+.fullgps  $dist($1) from $1, turn $2 heading $3, maintain $4 until established, cleared GPS runway $5 approach.
+
+.visapp cleared visual approach runway $1
+
+.vismtv cleared Mt. Vernon visual runway 1 approach
+
+.visriv follow the river inbound, cleared River Visual runway 19 approach
+
+.rafield $arr is at your $oclock($arr) and $dist($arr) miles, report in sight
+
+.rriv report the river in sight
+
+.paptac $dist($1) miles from $uc($1), turn $2 heading $3, maintain $4 until established on the localizer, maintain VFR, $5 $6 $7 practice approach approved, no separation services provided
+
+.paphac $dist($1) miles from $uc($1), fly heading $2, maintain $3 until established on the localizer, maintain VFR, $4 $5 $6 practice approach approved, no separation services provided
+
+.paptacf $dist($1) miles from $uc($1), turn $2 heading $3, maintain $4 until established on the final approach course, maintain VFR, $5 $6 $7 practice approach approved, no separation services provided
+
+.paphacf $dist($1) miles from $uc($1), fly heading $2, maintain $3 until established on the final approach course, maintain VFR, $4 $5 $6 practice approach approved, no separation services provided
+
+-------------------
+WEATHER ITEMS
+-------------------
+
+.metar $metar($arr)
+
+.wxdp wind $wind($dep) altimeter $altim($dep)
+
+.wxarr wind $wind($arr) altimeter $altim($arr)
+
+.wind wind $wind($1)
+
+.winddp wind $wind($dep)
+
+.windarr wind $wind($arr)
+
+.altim altimeter $altim($1)
+
+.wxapp wind $wind($arr), altimeter $altim($arr), when able, say approach request.
+
+.altimapt $1 altimeter $altim($1)
+
+.depalt altimeter $altim($dep)
+
+.arralt altimeter $altim($arr)
+
+.dovalt Dulles altimeter $altim(kdov)
+
+.iadalt Dulles altimeter $altim(kiad)
+
+.dcaalt Washington altimeter $altim(kdca)
+
+.bwialt Baltimore altimeter $altim(kbwi)
+
+.rdualt Raleigh altimeter $altim(krdu)
+
+.orfalt Norfolk altimeter $altim(korf)
+
+.acyalt Atlantic City altimeter $altim(kacy)
+
+.sbyalt Atlantic City altimeter $altim(ksby)
+
+.ricalt Richmond altimeter $altim(kric)
+
+.choalt Charlottesville altimeter $altim(kcho)
+
+.fayalt Fayetteville altimeter $altim(kfay)
+
+.ilmalt Wilmington altimeter $altim(kilm)
+
+.roaalt Roanoke altimeter $altim(kroa)
+
+.fdkalt Fredrick altimeter $altim(kfdk)
+
+.phlalt Philadelphia altimeter $altim(kphl)
+
+.cltalt Charlotte altimeter $altim(kclt)
+
+.sbvalt South Boston altimeter $altim(ksbv)
+
+.sbvalt Lynchburg altimeter $altim(klyh)
+
+.gsoalt Greensboro altimeter $altim(kgso)
+
+.caealt Greensboro altimeter $altim(kcae)
+
+.hazwx Attentional all aircraft, hazardous weather information, CONVECTIVE SIGMET $1 $2 $3 out valid until $4Z, further information available from HIWAS, Flight Watch or Flight Service frequencies or at http://adds.aviationweather.gov.
+
+.vmc $arr reporting VFR conditions, wind $wind($arr), altimeter $altim($arr),
+
+.imc $arr reporting wind $wind($arr), altimeter $altim($arr),
+
+.vmco no weather available for $arr, but $uc($1) reporting VFR conditions, wind $wind($1), altimeter $altim($1),
+
+.imco no weather available for $arr, but $uc($1) reporting wind $wind($1), altimeter $altim($1),
+
+-------------------
+HAND-OFF ITEMS
+-------------------
+
+.hoo entering Oceanic airspace, radar service terminated, squawk 2000, report position to $radioname($1) on $freq($1), so long
+
+.hopct contact Potomac Approach $freq($1), see yah.
+
+.ho contact $radioname($1) frequency $freq($1), good day.
+
+.mon monitor $radioname($1) frequency $freq($1), good day.
+
+.rem remain this frequency. 
+
+.gnd9 contact ground 121.9, g'day.
+
+.gnd8 contact ground 121.8, g'day.
+
+.gnd7 contact ground 121.7, g'day.
+
+.mongnd9 monitor ground 121.9, g'day.
+
+.mongnd8 monitor ground 121.8, g'day.
+
+.mongnd7 monitor ground 121.7, g'day.
+
+--------------------------------
+LEAVING AIRSPACE / UNCONTROLLED
+--------------------------------
+.rbcrlsd readback correct, released for departure; time now $time, clearance void if not off by $ftime($1); change to advisory frequency approved, report airborne this frequency
+
+.rbcrlsdwx readback correct; $dep altimeter $altim($dep), winds $wind($dep); released for departure; time now $time, clearance void if not off by $ftime($1); change to advisory frequency approved, report airborne this frequency
+
+.rbchld readback correct, hold for release, advise number $1 for departure
+
+.rbchldwx readback correct, $dep altimeter $altim($dep), winds $wind($dep); hold for release, advise number $1 for departure 
+
+.rlsd released for departure; time now $time, clearance void if not off by $ftime($1); change to advisory frequency approved, report airborne this frequency
+
+.hlddly hold for release, expect $1 minute departure delay.
+
+.notfc no traffic observed between you and the $arr airport, 
+
+.chad change to advisory frequency approved, G'day.
+
+.chadins change to advisory frequency approved, report IFR cancellation or missed approach this frequency.
+
+.chadvis change to advisory frequency approved, report IFR cancellation this frequency.
+
+.chadins2 change to advisory frequency approved, report IFR cancellation this frequency; in the event of a missed approach, contact $radioname($1) $freq($1).
+
+.chadvfr proceed to the airport; squawk 1200, change to advisory frequency approved, so long.
+
+.ifrair IFR cancellation received, squawk 1200, maintain VFR, change to advisory frequency approved, G'day.
+
+.ifrgnd IFR cancellation received, thanks for flying.
+
+.1200 squawk 1200, radar service terminated, frequency change approved, so long.
+
+.rst radar service terminated
+
+.fca frequency change approved
+
+.adv for further advisories contact $radioname($1) on $freq($1).
+
+.lmazny leaving my airspace, New York Center offline, radar services terminated, frequency change approved, g'day.
+.lman90 leaving my airspace, New York Approach offline, radar services terminated, frequency change approved, g'day.
+.lmazbw leaving my airspace, Boston Center offline, radar services terminated, frequency change approved, g'day.
+.lmazob leaving my airspace, Cleveland Center offline, radar services terminated, frequency change approved, g'day.
+.lmazid leaving my airspace, Indianapolis Center offline, radar services terminated, frequency change approved, g'day.
+.lmaztl leaving my airspace, Atlanta Center offline, radar services terminated, frequency change approved, g'day.
+.lmazjx leaving my airspace, Jacksonville Center offline, radar services terminated, frequency change approved, g'day.
+.lmazwy leaving my airspace, New York Radio offline, radar services terminated, frequency change approved, g'day.
+.lma leaving my airspace, radar service terminated, frequency change approved, so long.
+.lmavfr leaving my airspace, no further flight following available, squawk 1200, radar service terminated, frequency change approved, so long.
+
+.closing **NOTAM** $radioname() is closing in $1 minute(s)
+
+.closed **NOTAM** $radioname() is closed, thanks for flying
+
+.closedho **NOTAM** $radioname() is closed, make further requests with $radioname($1) on $freq($1), thanks for flying
+
+.closedu **NOTAM** $radioname() is closed, radar service terminated, frequency change approved, thanks for flying
+
+.brb All aircraft $radioname() will be right back
+
+.bk All aircraft $radioname() is back.
+
+-------------------
+MISC ITEMS
+-------------------
+
+.rgr roger
+
+.name $radioname($1)
+
+.freq $freq($1)
+
+.ge good evening
+
+.gar $radioname($1), good afternoon
+
+.gmr $radioname($1), good morning
+
+.ga good afternoon
+
+.gm good morning
+
+.gd g'day
+
+.gn g'night
+
+.so so long
+
+.aff affirmative
+
+.neg negative
+
+.aprvd approved as requested
+
+.this this frequency
+
+.wd Welcome to Dulles!
+
+.wn Welcome to The Nation's Capital!
+
+.wb Welcome to Baltimore!
+
+.ai Information $uc($1) is now current
+
+.ai@ Information $uc($1) is now current at $uc($2)
+
+.aic Verify you have information $uc($1)
+
+.thanks Thanks for flying in ZDC, we hope to see you again soon.
+
+.dis disregard.
+
+
+-------------------
+Open External links
+-------------------
+
+.weather .openurl http://www.aviationweather.gov/
+.airnav .openurl http://www.airnav.com/airports
+.skyvector .openurl http://skyvector.com/
+.prefroute .openurl http://flightaware.com/analysis/route.rvt?origin=$dep&destination=$arr
+.fp .prefroute
+.prefapt .openurl http://flightaware.com/analysis/route.rvt?origin=$1&destination=$2
+.nyprd .openurl https://nyartcc.org/prddo
+.simtools .openurl https://sim.tools/
+.zdcsop .openurl https://vzdc.org/storage/files/ZDC%20%7C%20Washington%20Center%20(Updated)_1558568626.pdf
+.pctsop .openurl https://vzdc.org/storage/files/PCT%20%7C%20Potomac%20Consolidated%20TRACON%20SOP_1579909027.pdf
+.iadsop .openurl https://vzdc.org/storage/files/KIAD%20%7C%20Washington%20-%20Dulles%20Tower%20SOP_1598046264.pdf
+.dcasop .openurl https://vzdc.org/storage/files/KDCA%20%7C%20Washington%20-%20National%20Tower%20SOP_1547179824.pdf
+.bwisop .openurl https://vzdc.org/storage/files/KBWI%20%7C%20Baltimore%20-%20Washington%20Tower%20SOP_1579743925.pdf
+.jo .openurl https://vzdc.org/storage/files/FAA%20Order%207110.65Y%20for%20Air%20Traffic%20Control_1583213827.pdf
+.acysop .openurl https://vzdc.org/storage/files/KACY%20%7C%20Atlantic%20City%20Tower%20&%20TRACON%20SOP_1547179933.pdf
+.faysop .openurl https://vzdc.org/storage/files/KFAY%20%7C%20Fayetteville%20Tower%20&%20TRACON%20SOP_1547179875.pdf
+.ilmsop .openurl https://vzdc.org/storage/files/KILM%20%7C%20Wilmington%20Tower%20&%20TRACON%20SOP_1547179943.pdf
+.orfsop .openurl https://vzdc.org/storage/files/KORF%20%7C%20Norfolk%20Tower%20SOP_1579744070.pdf
+.rdusop .openurl https://vzdc.org/storage/files/KRDU%20%7C%20Raleigh-Durham%20Tower%20&%20TRACON%20SOP_1547179900.pdf
+.ricsop .openurl https://vzdc.org/storage/files/KRIC%20%7C%20Richmond%20Tower%20&%20TRACON%20SOP_1547179912.pdf
+.roasop .openurl https://vzdc.org/storage/files/KROA%20%7C%20Roanoke%20Tower%20&%20TRACON%20SOP_1547179923.pdf
+.cs .openurl http://www.google.com/search?q=$1+callsign+icao
+.arr .openurl https://www.airnav.com/airport/$arr
+.dep .openurl https://www.airnav.com/airport/$dep
+.airport .openurl https://www.airnav.com/airport/$1
+
+-------------------
+VFR ITEMS
+-------------------
+
+.360 make a $1 360
+
+.270 make a $1 270
+
+.vfrdep cleared through Washington Class B airspace at or below $1. Maintain VFR, departure frequency $freq($2), squawk $squawk
+
+.vfrarr cleared into Washington Class B airspace. Maintain VFR at all times at or below $1.
+
+.vfrff departure frequency $freq($1), squawk $squawk
+
+.ownnav resume own navigation
+
+.vfrnav resume own navigation and appropriate VFR altitudes
+
+.vfralt resume appropriate VFR altitudes
+
+.outpctb cleared out of Washington-Baltimore Bravo airspace,
+
+.topctb cleared to enter Washington-Baltimore Bravo airspace,
+
+.thrupctb cleared through Washington-Baltimore Bravo airspace,
+
+.lvpctb leaving Washington-Baltimore Bravo airspace,
+
+.lvilmtrsa leaving Wilmington TRSA,
+
+-------------------
+PDC
+-------------------
+
+NOTE: DO NO EDIT ANY OF THE PDC COMMANDS TO ALTER THE WORDING PILOTS WILL RECEIVE.
+
+.pdc .p1 .p2
+.pdcu .p1 .p2u
+.pdcm .p1m $1 .p2
+.pdcmu .p1m $1 .p2u
+.pdct .p1 .p2t
+.pdcut .p1 .p2ut
+.pdcmt .p1m $1 .p2t
+.pdcmut .p1m $1 .p2ut
+.pdcz .p1 .p2z
+.pdcuz .p1 .p2uz
+.pdcmz .p1m $1 .p2z
+.pdcmuz .p1m $1 .p2uz
+.route
+
+.route .msg $aircraft ATC HAS ISSUED AN AMENDMENT TO YOUR ROUTE OF FLIGHT TO BETTER FACILITATE AIR TRAFFIC MOVEMENTS. IF YOU ARE ABLE TO ACCEPT THE AMENDMENT, PLEASE REPLY TO THIS MESSAGE THEN EXPECT TO RECEIVE CLEARANCE. IF YOU ARE NOT ABLE TO ACCEPT THE AMENDMENT, HAVE ANY QUESTIONS, OR WOULD PREFER A DIFFERENT ROUTE, PLEASE CONTACT $uc($radioname()) ON $com1. THE PROPOSED AMENDED ROUTE FOR YOUR FLIGHT IS: 
+
+.p1 .msg $aircraft - CLEARANCE START - | CALL SIGN: $aircraft | TRANSPONDER CODE: $squawk | ALTITUDE: $cruise | DEPT: $dep | ARR: $arr | EQUIPMENT: $type($aircraft) | APPROVED ROUTE: $route | ALTITUDE RESTRICTIONS: CLIMB VIA SID. -
+.p1m .msg $aircraft - CLEARANCE START - | CALL SIGN: $aircraft | TRANSPONDER CODE: $squawk | ALTITUDE: $cruise | DEPT: $dep | ARR: $arr | EQUIPMENT: $type($aircraft) | APPROVED ROUTE: $route | ALTITUDE RESTRICTIONS: MAINTAIN $1 -
+.p2 ADDITIONAL INFORMATION: DEPARTURE FREQUENCY $freq($1) | THIS MESSAGE SERVES AS YOUR DEPARTURE CLEARANCE. YOU DO NOT NEED TO REPLY TO THIS MESSAGE. CONTACT $uc($radioname()) ON $com1 WITH LOCATION ON THE AIRPORT, ASSIGNED SID, AND CURRENT ATIS WHEN READY TO PUSH OR IF YOU HAVE QUESTIONS REGARDING THIS CLEARANCE. - CLEARANCE END -
+.p2u ADDITIONAL INFORMATION: DEPARTURE CURRENTLY OFFLINE, EXPECT TO MONITOR UNICOM 122.800. | THIS MESSAGE SERVES AS YOUR DEPARTURE CLEARANCE. YOU DO NOT NEED TO REPLY TO THIS MESSAGE. CONTACT $uc($radioname()) ON $com1 WITH LOCATION ON THE AIRPORT, ASSIGNED SID, AND CURRENT ATIS WHEN READY TO PUSH OR IF YOU HAVE QUESTIONS REGARDING THIS CLEARANCE. - CLEARANCE END -
+.p2t ADDITIONAL INFORMATION: DEPARTURE FREQUENCY $freq($1) | THIS MESSAGE SERVES AS YOUR DEPARTURE CLEARANCE. YOU DO NOT NEED TO REPLY TO THIS MESSAGE. PUSH AND START AT YOUR DISCRETION, CHECK ATIS FOR DEPARTURE RUNWAY. CONTACT $uc($radioname()) ON $com1 WITH ASSIGNED SID, AND CURRENT ATIS WHEN READY TO TAXI OR IF YOU HAVE QUESTIONS REGARDING THIS CLEARANCE. - CLEARANCE END -
+.p2ut ADDITIONAL INFORMATION: DEPARTURE CURRENTLY OFFLINE, EXPECT TO MONITOR UNICOM 122.800. | THIS MESSAGE SERVES AS YOUR DEPARTURE CLEARANCE. YOU DO NOT NEED TO REPLY TO THIS MESSAGE. PUSH AND START AT YOUR DISCRETION, CHECK ATIS FOR DEPARTURE RUNWAY. CONTACT $uc($radioname()) ON $com1 WITH ASSIGNED SID, AND CURRENT ATIS WHEN READY TO TAXI OR IF YOU HAVE QUESTIONS REGARDING THIS CLEARANCE. - CLEARANCE END -
+.p2z ADDITIONAL INFORMATION: DEPARTURE FREQUENCY $freq($1) | THIS MESSAGE SERVES AS YOUR DEPARTURE CLEARANCE. YOU DO NOT NEED TO REPLY TO THIS MESSAGE. PUSH AND START AT YOUR DISCRETION, CHECK ATIS FOR DEPARTURE RUNWAY. CONTACT $uc($radioname()) ON $com1 WITH ASSIGNED SID, AND CURRENT ATIS WHEN HOLDING SHORT OF TAXIWAY Z OR IF YOU HAVE QUESTIONS REGARDING THIS CLEARANCE. - CLEARANCE END -
+.p2uz ADDITIONAL INFORMATION: DEPARTURE CURRENTLY OFFLINE, EXPECT TO MONITOR UNICOM 122.800. | THIS MESSAGE SERVES AS YOUR DEPARTURE CLEARANCE. YOU DO NOT NEED TO REPLY TO THIS MESSAGE. PUSH AND START AT YOUR DISCRETION, CHECK ATIS FOR DEPARTURE RUNWAY. CONTACT $uc($radioname()) ON $com1 WITH  ASSIGNED SID, AND CURRENT ATIS WHEN HOLDING SHORT OF TAXIWAY Z OR IF YOU HAVE QUESTIONS REGARDING THIS CLEARANCE. - CLEARANCE END - 
+.xpdc you will receive your clearance via PDC over private message. Readback is not required.
+.nopdc .msg $aircraft PRE-DEPARTURE CLEARANCE UNAVAILABLE. CONTACT $freq($1) FOR CLEARANCE.
+.checkpdc clearance was issued via CPDLC. Check private messages for your IFR clearance.
+
+.pdc .p1 .p2
+.pdcu .p1 .p2u
+.pdcm .p1m $1 .p2
+.pdcmu .p1m $1 .p2u
+.pdct .p1 .p2t
+.pdcut .p1 .p2ut
+.pdcmt .p1m $1 .p2t
+.pdcmut .p1m $1 .p2ut
+.pdcz .p1 .p2z
+.pdcuz .p1 .p2uz
+.pdcmz .p1m $1 .p2z
+.pdcmuz .p1m $1 .p2uz
+.route
+	
+-------------------
+ROUTINGS
+-------------------
+.sp .sticky $uc($1)|$freq($1)|$uc($2)
+.iadjfk .msg STND_ROUTES :: PALEO V44 DONIL V229 PANZE V44 CAMRN (AOB170)
+.iadewr .msg STND_ROUTES :: SWANN V445 DQO PHLBO3 (RNAV) | SWANN V445 DQO DYLIN4 (non-RNAV) | WOOLY V214 SWANN RUUTH1 (prop) (AOB170)
+.iadlga .msg STND_ROUTES :: PALEO V44 AGARD KORRY4 (AOB210)
+.iadteb .msg STND_ROUTES :: WOOLY SWANN FUBRR JAIKE3 (AOB190)
+.iadphl .msg STND_ROUTES :: WOOLY V214 DQO (130)
+.iadisp .msg STND_ROUTES :: PALEO V44 SIE J121 SARDI CCC (AOB250)
+.jfkcross .sticky | |JFK CTR HOGGS crossing | | 29.92 or higher :: FL180 | |  29.92 to 28.92 :: FL190 | | 28.91 to 27.92 :: FL200
+
+	
+-------------------
+AUTOTRACK (FOR vERAM ONLY)
+-------------------
+.autotrackall .autotrack KIAD KDCA KBWI KRIC KRDU KORF KROA KACY KILM KFAY
+.autotracknopct .autotrack -KIAD -KDCA -KBWI -KRIC
+
+___________________________________________
+
+****HELPFUL STICKIES****
+
+/.N90Sticky
+
+/Landing N90 Arrival Crossing RESTRICTIONS
+
+/N90 EWR Area Arrivals (ARD Sector)
+/PHLBO# (Jets) - Descend via (PHL Altim)
+/DYLIN# (Jets) - Descend via (PHL Altim)
+/ENO.V29.DQO.V479.RUUTH.V123/RUUTH# (Prop) - 20nm N SBY @ 15000
+/RUUTH# - LOUIE @ 13000 (HO to PHL)
+/ENO.V29.DQO.V3.SBJ (TProp) - BLARE @ 11000
+/ENO.V29.DQO.V3.SBJ (Prop) - DOV Boundary @ 8000
+/**Landing TEB, MMU, CDW**
+/SWANN.MAZIE# (Prop) - SWANN @ 13000
+
+
+.nystar1 .sticky ZNY STAR Crossing Restrictions Part 1| |N90 TRACON EWR Arrivals| |DYLIN# (Jets) -- STEFE AOA 13,000', SOMTO @ 11,000', DYLIN @ 8,000' (or descend via)|PHLBO# (Jets, RNAV) -- STEFE AOA 13,000', SOMTO @ 11,000', DYLIN @ 8,000' (or descend via)|RUUTH# (Props) -- LOUIE @ 13,000'| |N90 TRACON LGA Arrivals| |GATBY# (Props) -- LOUIE @ 13,000|KORRY# (Jets) -- DAVYS AOA 13,000', BRAND AOB 11,000', KORRY @ 10,000' (or descend via)| |N90 TRACON JFK Arrivals| |CAMRN# (Jets) -- HOGGS @ LUFL / 280 IAS, CAMRN @ 11,000' / 250 IAS| |PHL TRACON Arrivals| |VCN# (Jets) -- RADDS @ 15,000', VCN @ 8,000'|VCN# (Props) -- RADDS @ 11,000', SIE @ 8,000'|BRIGS JIIMS# -- BRIGS @ 14,000', IROKT @ 8,000'|SWL JIIMS# (Jets) -- RADDS @ 15,000', HEKMN @ 9,000'|SWL JIIMS# (Prop) -- RADDS @ 11,000', WNSTN @ 8,000'|DPNT# (Jets) -- JAYBO @ 15,000' or GARED @ 13,000', TERRI @ 10,000' / 250 IAS|GVE/FAK PAATS# -- SHONA @ FL310, BUKKY @ FL240, JAYBO @ 15,000', ESSSO @ 10,000' / 250 IAS|PXT PAATS# -- GARED @ 13,000', ESSSO @ 10,000' / 250 IAS
+
+.nystar2 .sticky ZNY STAR Crossing Restrictions Part 2| |ZNY Minor Arrivals| |SIE BOUNO4 (HPN, AOA FL180) -- ZNY Boundary AOB FL240|J150 CYN BOUNO4 (HPN, AOA FL180) -- ZNY Boundary AOB FL230|RICED4 (HPN, DXR) -- RADDS AOB FL370, ZNY Boundary AOB FL210|JAIKE2 (TEB/MMU, RNAV, Jets) -- PEEDS @ FL240, JAIKE @ 13,000'|SIE4 (WRI) -- JAYBO @ 15,000' / RADDS @ 11,000', SIE @ 8,000'
+
+.znyloa .sticky ZDC and ZNY LOA| |ZNY ARTCC Procedures| |EMJAY J174 -- Climb to FL230 handoff to ZDC-Sea Isle (133.12)|EMJAY J174 -- Handoff to ZDC-Casino (127.7) if below FL180|PHL DITCH departures shall be handed off to ZNY heading north or ZDC heading south|-- ZDC may require a point out from ZNY if traffic is a factor|PHL shall release the HOLEY hold airspace to ZDC AOB 11,000'|ACY Arrivals -- PHL border @ 5,000'| |ZDC ARTCC Procedures| |JERES J220/J227 -- Climb to FL270|Landing ALB - AOB FL350|Landing BDL+Sats (J42 RBV) - AOB FL270|Landing BDL+Sats (J79 JFK DPK) - AOB FL250|Landing BDL+Sats (prop via V139 MAD BRISS) - AOB FL210|Landing BOS - AOB FL370|Landing PVD - AOB FL330|Landing SYR - AOB FL310
+
+.ztlloa .sticky ZDC and ZTL LOA| |CLT + Sats|     MAJIC#/CHSLY# AOB FL260|     Prop FAY V56 FLO RASLN# - FAY 20 DME @ 11,000|     Prop ARGAL GSO V143 GIZMO - GSO 30 DME @ 13,000| |CAE via GSO J75 CAE - AOB FL300| |GSO + Sats|     J79 FKN V66 ARGAL (Jet) - FKN @ FL240 / GSO 30 DME @ 13,000|     SDZ BLOCC# (Jet) - BLOCC @ 12,000|     SDZ BLOCC# (Prop) - BLOCC @ 11,000|     HENBY# (Jet) - HENBY @ 13,000|     HENBY# (Prop) - HENBY @ 12,000|KTRI - AOB FL260
+
+.zjxloa .sticky ZDC and ZJX LOA| |CAE - AOB FL220|CHS + Sats - AOB FL280|FLO + MYR + Sats - AOB FL230 descending to 11,000|SAV - AOB FL340
+
+.phlstar .sticky PHL STAR Crossing Restictions| |GVE/FAK PAATS# - SHONA @ FL310 / BUKKY @ FL240 / JAYBO @ 15,000 / ESSSO @ 10,000 + 250 IAS|PXT PAATS# - 5nm S GARED @ 13,000 / ESSSO @ 10,000 + 250 IAS|SWL JIIMS# - RADDS @ 15,000 / HEKMN @ 9,000|SWL VCN# - RADDS @ 15,000 / 10nm S VCN @ 9,000|BRIGS JIIMS# - BRIGS @ 14,000 / IROKT @ 9,000|BRIGS VCN# - BRIGS @ 14,000 / 10nm E VCN @ 9,000|---Prop---|SWL VCN# - RADDS @ 11,000 / SIE @ 8,000|SWL JIIMS# - RADDS @ 11,000 / WNSTN @ 8,000|DASHA JIIMS# - WNSTN @ 8,000|GARED V229 LEEAH VCN - ATWEL @ 8,000|ENO V29 DQO - BLARE @ 11,000

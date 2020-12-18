@@ -1,0 +1,831 @@
+;ZDC Position ID File
+;Created on Nov. 16, 2002
+;Last updated on November 20, 2020 (JY)
+;
+;***********************
+;Changes:
+;06/13/2003 ZDC- Military Facilities added
+;06/13/2003 ADW- Andrews Approach added to Washington sector of the PCT, ID changed to 4A
+;04/27/2003 RIC- Charlottesville callsign changed to CHO APP
+;04/05/2003 BWI- Baltimore TRACON radionames change to "Potomac"
+;03/28/2003 IAD- 2 new departure frequencies added
+;03/21/2003 ZNY- New York Center G/G Coms ajusted
+;03/19/2003 BWI- Baltimore Departure on 128.7 ID changed to 3Y ARTS tag changed to Y
+;03/18/2003 N90- Callsigns prefixes changed to NY, IDs remain the same
+;08/01/2003 PCT- Radar sector beacon codes changed to prevent duplicate codes
+;08/01/2003 RDU- Radar sector beacon codes changed to prevent duplicate codes
+;08/01/2003 ZDC- Each area now has a specific set of beacon codes
+;08/01/2003 ZDC- Other towered facilities beacon codes changed to 5500-5577
+;08/01/2003 MRB- Moved to PCT Dulles sector, ID's changed to 5 prefix
+;08/04/2003 ZDC- Area D primary frequency changed
+;09/15/2003 ZOB- Center aectors added
+;09/15/2003 ZDC- Other towered facilities ID's changed
+;09/15/2003 FAY- ID's changed to 0 (zero) prefix
+;09/15/2003 ILM- ID's Changed to 0 (zero) prefix
+;09/15/2003 ALL- Neighboring Center and TRACON ID's Changed
+;01/22/2004 CVN- Aircraft carrier position added for vUSN
+;01/15/2006 ALL- reset all .xx5 frequencies to .xx0.  Various updates. Fixed JYO clearance freq
+;01/15/2006 ALL- Made adjustments aligned to SOP updates; fixed RDU S DEP - was 115.300 (a vor freq) to 125.300
+;07/01/2006 ZOB- Replaced ZOB and Clarksburg with new entries provided by ZOB
+;07/03/2006 PCT- Added entries to support the DC_xxx callsigns for the PCT radar positions
+;07/08/2006 ALL- New beacon code assignments
+;02/12/2007 ZNY- New primary positions for N90, center, and PHL
+;03/30/2007 ZNY- Going back to regular primary approach positions for N90 and PHL
+;12/24/2007 PCT- Changed callsigns for PCT positions to allow only DC_xxx_APP/DEP
+;12/24/2007 ZDC- Added addition beacon codes to sector 24 because it is the primary sector
+;02/21/2008 PCT- Changed PCT Callsigns to IAD_, DCA_, BWI_, RIC_, CHO_ and adjusted PCT section for new SOPs.
+;02/21/2008 RDU- Changed ID prefix to 5x.
+;02/24/2008 ZTL- Changed ZTL Center frequencies for new sectors
+;02/24/2008 N90- Added N90 HAARP per LOA
+;02/24/2008 PHL- Added South Arrival per LOA
+;11/09/2010 ZDC- Beacon codes adjusted to new center splits
+;11/09/2010 NCA- Added New River
+;11/09/2010 NYG- Added Quantico
+;04/19/2011 ZTL- New CTR Frequencies Added/ID's changed
+;04/19/2011 ZJX- New CTR Frequencies Added/ID's changed
+;06/29/2011 ZDC- Ctr frequencies changed.  Areas E and F eliminated.
+;06/29/2011 ORF- Updated ORF TRACON Frequencies/Sectors
+;06/29/2011 RDU- Updated RDU ATCT/TRACON Frequencies/Sectors
+;06/29/2011 ZDC- Updated Squawk Code assignments per Area
+;10/10/2013 ZDC- Updated splits
+;10/10/2013 ALL- Beacon code and ID changes
+;11/23/2016 ACY- Updated ACY DEL freq.
+;11/26/2016 N90,CLT- Update tags
+;12/02/2016 - Update ORF DEP,GND,DEL, and PHL TRACON to avoid conflicts for data tags
+;12/26/2016 - Update Center data tags
+;02/16/2017 - Update for centralize update. Remove version within the file name. Version control will be within the file
+;02/18/2017 - Update ORF data tags to meet new SOP requirement.
+;02/22/2017 - Update PCT data tags; Additional PCT_APP and PCT_DEP.
+;03/27/2017 - Update IAD data tags to match with new SOP thanks to SA.  
+;04/12/2020 - Update all neighboring center frequencies for event purposes
+;07/31/2020 - Update ZJX frequencies and ID's to reflect their recent changes
+;11/20/2020 - Fixed positions with incorrect ID/frequencies
+***********************
+;USE THIS FILE TO CREATE UNIQUE STATIC CONTROLLER POSITION ID'S FOR YOUR ASRC RADAR CLIENT.
+;AMENDING THIS FILE ONLY CHANGES THE WAY CONTROLLERS APPEAR TO YOU, AND DOES NOT AFFECT
+;THE WAY OTHER CLIENTS SEE YOU, OR THE WAY THAT THEY SEE OTHER CONTROLLERS.
+;
+;THIS FILE USES THE FOLLOWING FORMAT -->
+;NAME:RNAME:FREQ:SECID:ARTSTAG:CALLPREFIX:CALLSUFFIX:LINE1:LINE2:LSQUAWK:HSQUAWK
+;
+;NAME = SECTOR NAME
+;RNAME = RADIO CALLSIGN
+;FREQ = FREQUENCY MATCH FOR THIS POSITIN
+;SECID = SECTOR ID USED FOR HANDOFFS & ATC-ATC COMMS
+;ARTSTAG = POSITION SYMBOL ON THE ARTS SCOPE
+;CALLPREFIX = PREFIX MATCH FOR THIS POSITION
+;CALLSUFFIX = SUFFIX MATCH FOR THIS POSITION
+;LINE1 = FIRST LINE TO DISPLAY ON EACH KEY IN VSCS
+;LINE2 = SECOND LINE TO DISPLAY ON EACH KEY IN VSCS
+;LSQUAWK = LOW END OF SQUAWK RANGE FOR THIS POSITION
+;HSQUAWK = HIGH END OF SQUAWK RANGE FOR THIS POSITION
+;
+; ******************************
+; ZDC - Observer/Staff Callsigns
+; ******************************
+ZDC ATM:Air Traffic Manager:199.998:ATM:A:ZDC:ATM:ZDC:ATM
+ZDC DATM:Deputy Air Traffic Manager:199.998:DTM:D:ZDC:DATM:ZDC:DATM
+ZDC TA:Training Administrator:199.998:TA:T:ZDC:TA:ZDC:TA
+ZDC TMU:Traffic Managment Unit:199.998:TMU:T:ZDC:TMU:ZDC:TMU
+ZDC EC:Events Coordinator:199.998:EC:E:ZDC:EC:ZDC:EC
+ZDC FE:Facility Engineer:199.998:FE:A:ZDC:FE:ZDC:FE
+ZDC Mentor:Mentor:199.998:MTR:M:ZDC:MTR:ZDC:MTR
+ZDC Instructor:Instructor:199.998:INS:I:ZDC:INS:ZDC:INS
+ZDC Observer:Observer:199.998:OBS:O:ZDC:OBS:ZDC:OBS
+;
+;
+; ******************************
+; ZDC - Washington Center Area A
+; ******************************
+;
+ZDC Hi- 03 Moorefield:Washington Center:133.270:03:C:DC:CTR:DC:03:3601:3637
+ZDC Hi- 04 Pinion (A):Washington Center:133.970:04:C:DC:CTR:DC:04:3601:3637
+ZDC Hi- 37 Marlinton:Washington Center:133.020:37:C:DC:CTR:DC:37:3601:3637
+;
+; ******************************
+; ZDC - Washington Center Area B
+; ******************************
+;
+ZDC Hi- 10 Bay:Washington Center:132.270:10:C:DC:CTR:DC:10:3640:3677
+ZDC Hi- 12 Brooke:Washington Center:126.870:12:C:DC:CTR:DC:12:3640:3677
+ZDC Hi- 18 Dupont:Washington Center:132.520:18:C:DC:CTR:DC:18:3640:3677
+ZDC Hi- 19 Woodstown (B):Washington Center:125.450:19:C:DC:CTR:DC:19:3640:3677
+ZDC Hi- 39 Snow Hill:Washington Center:121.370:39:C:DC:CTR:DC:39:3640:3677
+ZDC Lo- 51 Casino:Washington Center:127.700:51:C:DC:CTR:DC:51:3640:3677
+ZDC Lo- 53 Kenton:Washington Center:132.050:53:C:DC:CTR:DC:53:3640:3677
+ZDC Hi- 54 Salisbury:Washington Center:120.970:54:C:DC:CTR:DC:54:3640:3677
+ZDC Hi- 58 Coyle:Washington Center:121.020:58:C:DC:CTR:DC:58:3640:3677
+ZDC Hi- 59 Sea Isle:Washington Center:133.120:59:C:DC:CTR:DC:59:3640:3677
+;
+; ******************************
+; ZDC - Washington Center Area C
+; ******************************
+;
+ZDC Lo- 14 Irons:Washington Center:132.950:14:C:DC:CTR:DC:14:0501:0577
+ZDC Hi- 16 Hopewell:Washington Center:121.870:16:C:DC:CTR:DC:16:0501:0577
+ZDC Hi- 32 Gordonsville (C):Washington Center:133.720:32:C:DC:CTR:DC:32:0501:0577
+ZDC Hi- 36 Raleigh:Washington Center:118.920:36:C:DC:CTR:DC:36:0501:0577
+ZDC Hi- 52 Tech:Washington Center:133.570:52:C:DC:CTR:DC:52:0501:0577
+;
+; ******************************
+; ZDC - Washington Center Area D
+; ******************************
+;
+ZDC Hi- 34 Norfolk:Washington Center:133.820:34:C:DC:CTR:DC:34:7001:7037
+ZDC Hi- 35 Wilmington (D):Washington Center:124.020:35:C:DC:CTR:DC:35:7001:7037
+ZDC Hi- 38 Tar River:Washington Center:132.220:38:C:DC:CTR:DC:38:7001:7037
+;
+; ******************************
+; ZDC - Washington Center Area SH
+; ******************************
+;
+ZDC SH- 07 Wahoo:Washington Center:121.920:07:C:DC:CTR:07:3501:3517
+ZDC SH- 09 Dixon:Washington Center:118.820:09:C:DC:CTR:DC:09:3501:3517
+ZDC SH- 42 Bryce:Washington Center:118.020:42:C:DC:CTR:DC:42:3501:3517
+ZDC SH- 50 Yorktown:Washington Center:127.420:50:C:DC:CTR:DC:50:3501:3517
+ZDC SH- 72 Shenandoah:Washington Center:134.620:72:C:DC:CTR:DC:72:3501:3517
+;
+; **********************************
+; ZDC - Other Center Sectors
+; **********************************
+ZDC Lo- 01 Elkins:Washington Center:128.600:01:C:DC:CTR:DC:01:7040:7077
+ZDC Lo- 02 Casanova:Washington Center:133.200:02:C:DC:CTR:DC:02:7040:7077
+ZDC Lo- 05 Linden:Washington Center:133.550:05:C:DC:CTR:DC:05:7040:7077
+ZDC Lo- 06 Hagerstown:Washington Center:134.150:06:C:DC:CTR:DC:06:7040:7077
+ZDC Lo- 11 Calvert:Washington Center:133.900:11:C:DC:CTR:DC:11:7040:7077
+ZDC Lo- 15 Blue Ridge:Washington Center:133.650:15:C:DC:CTR:DC:15:7040:7077
+ZDC Lo- 17 Swann:Washington Center:134.500:17:C:DC:CTR:DC:17:7040:7077
+ZDC Lo- 20 Blackstone:Washington Center:127.750:20:C:DC:CTR:DC:20:7040:7077
+ZDC Lo- 21 Dominion:Washington Center:118.750:20:C:DC:CTR:DC:21:7040:7077
+ZDC Lo- 22 South Boston:Washington Center:124.050:22:C:DC:CTR:DC:22:7040:7077
+ZDC Lo- 23 Cape Charles:Washington Center:132.550:23:C:DC:CTR:DC:23:7040:7077
+ZDC Lo- 24 Cofield:Washington Center:123.850:24:C:DC:CTR:DC:24:7040:7077
+ZDC Lo- 25 New Bern:Washington Center:135.500:25:C:DC:CTR:DC:25:7040:7077
+ZDC Lo- 26 Sampson:Washington Center:135.300:26:C:DC:CTR:DC:26:7040:7077
+ZDC Lo- 27 Liberty:Washington Center:135.200:27:C:DC:CTR:DC:27:7040:7077
+ZDC Lo- 28 Rocky Mount:Washington Center:118.470:28:C:DC:CTR:DC:28:7040:7077
+ZDC Lo- 29 Hot Springs:Washington Center:134.400:29:C:DC:CTR:DC:29:7040:7077
+ZDC Lo- 30 Valley:Washington Center:127.920:30:C:DC:CTR:DC:30:7040:7077
+ZDC Lo- 31 Azalea:Washington Center:135.400:31:C:DC:CTR:DC:31:7040:7077
+ZDC Lo- 33 Franklin:Washington Center:132.020:33:C:DC:CTR:DC:33:7040:7077
+ZDC Lo- 39 Snow Hill:Washington Center:121.370:39:C:DC:CTR:DC:39:7040:7077
+ZDC Lo- 60 Montebello:Washington Center:121.670:60:C:DC:CTR:DC:60:7040:7077
+;
+; **********************************
+; ZDC - Other Towered Facilities (0)
+; **********************************
+Hagerstown- Tower:Hagerstown Tower:120.300:0C:T:HGR:TWR:HGR:TWR:4601:4617
+Hagerstown- Ground:Hagerstown Ground:121.900:0E:-:HGR:GND:HGR:GND:4601:4617
+New Bern- Tower:New Bern Tower:124.250:0F:T:EWN:TWR:EWN:TWR:4620:4637
+New Bern- Ground:New Bern Ground:121.700:0J:-:EWN:GND:EWN:GND:4620:4637
+Kinston- Tower:Kinston Tower:120.600:0N:T:ISO:TWR:ISO:TWR:4640:4657
+Lewisburg- Tower:Lewisburg Tower:118.900:0P:T:LWB:TWR:LWB:TWR:4660:4677
+Lewisburg- Ground:Lewisburg Ground:121.900:0Q:-:LWB:GND:LWB:GND:4660:4677
+;
+; **************************************
+; Potomac TRACON - Chesapeake Area (1)
+; **************************************
+PCT Chesapeake- GRACO:Potomac Departure:124.550:1G:G:BWI:DEP:CHP:GRACO:2420:2477
+PCT Chesapeake- WOOLY:Potomac Departure:128.700:1W:W:BWI:DEP:CHP:WOOLY:2420:2477
+PCT Chesapeake- BELAY:Potomac Approach:125.520:1B:B:BWI:APP:CHP:BELAY:2420:2477
+PCT Chesapeake- BUFFR:Potomac Approach:133.850:1H:H:BWI:APP:CHP:BUFFR:2420:2477
+PCT Chesapeake- PALEO:Potomac Approach:133.750:1P:P:BWI:APP:CHP:PALEO:2420:2477
+PCT Chesapeake- BWIFS:Potomac Approach:119.700:1S:S:BWI:APP:CHP:BWIFS:2420:2477
+PCT Chesapeake- BWIFN:Potomac Approach:119.000:1N:N:BWI:APP:CHP:BWIFN:2420:2477
+;
+; **************************************
+; Potomac TRACON - James River Area (2)
+; **************************************
+PCT James River- CHOWE:Potomac Approach:132.850:2W:W:CHO:APP:JRV:CHOWE:1320:1337
+PCT James River- CHOEA:Potomac Approach:120.520:2E:E:CHO:APP:JRV:CHOEA:1320:1337
+PCT James River- FLTRK:Potomac Approach:126.800:2L:L:RIC:APP:JRV:FLTRK:1320:1337
+PCT James River- RICFR:Potomac Approach:118.200:2F:F:RIC:APP:JRV:RICFR:1320:1337
+PCT James River- TAPPA:Potomac Departure:126.400:2P:P:RIC:DEP:JRV:TAPPA:1320:1337
+PCT James River- CSIDE:Potomac Approach:127.200:2X:X:RIC:APP:JRV:CSIDE:1320:1337
+PCT James River- CSIDW:Potomac Approach:135.625:2M:M:RIC:APP:JRV:CSIDW:1320:1337
+;
+; **************************************
+; Potomac TRACON - Shenandoah Area (3)
+; **************************************
+PCT Shenandoah- ASPER:Potomac Departure:125.050:3A:A:IAD:DEP:SHD:ASPER:5620:5677
+PCT Shenandoah- TILLY:Potomac Departure:126.650:3T:T:IAD:DEP:SHD:TILLY:5620:5677
+PCT Shenandoah- BARIN:Potomac Approach:128.520:3B:B:IAD:APP:SHD:BARIN:5620:5677
+PCT Shenandoah- BINNS:Potomac Approach:133.000:3V:V:IAD:APP:SHD:BINNS:5620:5677
+PCT Shenandoah- BRSTO:Potomac Approach:120.820:3O:O:IAD:APP:SHD:BRSTO:5620:5677
+PCT Shenandoah- IADFE:Potomac Approach:125.800:3X:X:IAD:APP:SHD:IADFE:5620:5677
+PCT Shenandoah- IADFC:Potomac Approach:134.200:3S:S:IAD:APP:SHD:IADFC:5620:5677
+PCT Shenandoah- IADFW:Potomac Approach:135.775:3U:U:IAD:APP:SHD:IADFW:5620:5677
+PCT Shenandoah- LUCKE:Potomac Approach:126.820:3Z:Z:IAD:APP:SHD:LUCKE:5620:5677
+PCT Shenandoah- MANNE:Potomac Approach:120.450:3N:N:IAD:APP:SHD:MANNE:5620:5677
+PCT Shenandoah- MULRR:Potomac Approach:126.100:3M:M:IAD:APP:SHD:MULRR:5620:5677
+PCT Shenandoah- RCOLA:Potomac Approach:135.770:3R:R:IAD:APP:SHD:RCOLA:5620:5677
+PCT Shenandoah- HEF & JYO Clearance:Potomac Clearance:118.550:3Y:-:PCT:DEL:PCT:DEL:3560:3577
+;
+; **************************************
+; Potomac TRACON - Mount vernon Area (1)
+; **************************************
+PCT Mount Vernon- OJAAY:Potomac Approach:119.850:1J:J:PCT:APP:MTV:OJAAY:2120:2177
+PCT Mount Vernon- ENSUE:Potomac Approach:124.200:1E:E:DCA:APP:MTV:ENSUE:2120:2177
+PCT Mount Vernon- DEALE:Potomac Approach:128.350:1D:D:DCA:APP:MTV:DEALE:2120:2177
+PCT Mount Vernon- LURAY:Potomac Approach:118.670:1L:L:DCA:APP:MTV:LURAY:2120:2177
+PCT Mount Vernon- DCAFR:Potomac Approach:124.700:1V:V:DCA:APP:MTV:DCAFR:2120:2177
+PCT Mount Vernon- FLUKY:Potomac Departure:121.050:1F:F:DCA:DEP:MTV:FLUKY:2120:2177
+PCT Mount Vernon- TYSON:Potomac Departure:118.950:1Y:Y:DCA:DEP:MTV:TYSON:2120:2177
+PCT Mount Vernon- KRANT:Potomac Departure:125.650:1K:K:DCA:DEP:MTV:KRANT:2120:2177
+PCT Mount Vernon- ADWFR:Potomac Approach:124.000:1R:R:DCA:APP:MTV:ADWFR:2120:2177
+PCT Mount Vernon- ADWAR:Potomac Approach:128.000:1A:A:DCA:APP:MTV:ADWAR:2120:2177
+;
+;
+; *******************
+; Baltimore Local (1)
+; *******************
+
+Baltimore- Clearance:Baltimore Clearance:118.050:1C:-:BWI:DEL:BWI:CD:2401:2477
+Baltimore- Ground (G1):Baltimore Ground:121.900:1D:-:BWI:GND:BWI:G1:2401:2477
+Baltimore- Ground (G2):Baltimore Ground:120.200:1Z:-:BWI:GND:BWI:G2:2401:2477
+Baltimore- Tower (L1):Baltimore Tower:119.400:1T:T:BWI:TWR:BWI:L1:2401:2477
+Baltimore- Tower (L2):Baltimore Tower:123.750:1A:T:BWI:TWR:BWI:L2:2401:2477
+Martin State- Ground:Martin Ground:121.800:1U:-:MTN:GND:MTN:GND:5320:5337
+Martin State- Tower:Martin Tower:121.300:1M:8:MTN:TWR:MTN:TWR:5320:5337
+;
+; ******************
+; Richmond Local (2)
+; ******************
+Richmond- Clearance:Richmond Clearance:127.550:2C:-:RIC:DEL:RIC:DEL:1301:1337
+Richmond- Ground:Richmond Ground:121.900:2G:-:RIC:GND:RIC:GND:1301:1337
+Richmond- Tower:Richmond Tower:121.100:2T:T:RIC:TWR:RIC:TWR:1301:1337
+;
+; *************************
+; Charlottesville Local (2)
+; *************************
+Charlottesville- Ground:Charlottesville Ground:121.900:2V:-:CHO:GND:CHO:GND:5301:5317
+Charlottesville- Tower:Charlottesville Tower:124.500:2O:T:CHO:TWR:CHO:TWR:5301:5317
+;
+; ****************
+; Dulles Local (3)
+; ****************
+Dulles- Clearance:Dulles Clearance:135.700:1D:-:IAD:DEL:IAD:CD:5601:5677
+Dulles- Ground (Ramp):Dulles Ground:129.550:1R:-:IAD:GND:IAD:GCR:5601:5677
+Dulles- Ground (GCE):Dulles Ground:121.900:1G:-:IAD:GND:IAD:GCE:5601:5677
+Dulles- Ground (GCW):Dulles Ground:121.650:2G:-:IAD:GND:IAD:GCW:5601:5677
+Dulles- Ground (GCN):Dulles Ground:123.775:3G:-:IAD:GND:IAD:GCN:5601:5677
+Dulles- Tower (LCW):Dulles Tower:128.420:1T:T:IAD:TWR:IAD:LCW:5601:5677
+Dulles- Tower (LCE):Dulles Tower:120.100:3T:T:IAD:TWR:IAD:LCE:5601:5677
+Dulles- Tower (LCN):Dulles Tower:120.250:2T:T:IAD:TWR:IAD:LCN:5601:5677
+Manassas- Ground:Manassas Ground:121.800:3F:-:HEF:GND:HEF:GND:5340:5357
+Manassas- Tower:Manassas Tower:133.100:3K:T:HEF:TWR:HEF:TWR:5340:5357
+Martinsburg- Ground:Martinsburg Ground:121.800:3J:-:MRB:GND:MRB:GND:5360:5377
+Martinsburg- Tower:Martinsburg Tower:124.300:3I:T:MRB:TWR:MRB:TWR:5360:5377
+;
+; ********************
+; Washington Local (4)
+; ********************
+Washington- Clearance:Washington Clearance:128.250:4C:-:DCA:DEL:DCA:CD:2101:2177
+Washington- Ground:Washington Ground:121.700:4G:-:DCA:GND:DCA:GC:2101:2177
+Washington- Tower (LC):Washington Tower:119.100:4T:T:DCA:TWR:DCA:LC:2101:2177
+Washington- Tower (HC):Washington Tower:134.350:4U:T:DCA:TWR:DCA:HC:2101:2177
+Potomac- Clearance:Potomac Clearance:120.200:4B:-:PCT:DEL:PCT:DEL:2101:2177
+;
+; **************************
+; Raleigh-Durham TRACON (5)
+; **************************
+Raleigh- East Arrival Radar:Raleigh Approach:124.950:5E:E:RDU:APP:RDU_E:APP:6520:6577
+Raleigh- West Arrival Radar:Raleigh Approach:128.300:5W:W:RDU:APP:RDU_W:APP:6520:6577
+Raleigh- North Departure Radar:Raleigh Departure:132.350:5N:N:RDU:DEP:RDU_N:DEP:6520:6577
+Raleigh- South Departure Radar:Raleigh Departure:118.200:5S:S:RDU:DEP:RDU_S:DEP:6520:6577
+Raleigh- East Final Radar:Raleigh Approach:124.800:5U:U:RDU:APP:RDU_U:APP:6520:6577
+Raleigh- West Final Radar:Raleigh Approach:135.150:5Y:Y:RDU:APP:RDU_Y:APP:6520:6577
+Raleigh- Local Control East:Raleigh Tower:127.450:5T:T:RDU:TWR:RDU_E:TWR:6501:6577
+Raleigh- Local Control West:Raleigh Tower:119.300:5Z:T:RDU:TWR:RDU_W:TWR:6501:6577
+Raleigh- Ground Control East:Raleigh Ground:121.900:5G:-:RDU:GND:RDU_E:GND:6501:6577
+Raleigh- Ground Control West:Raleigh Ground:121.700:5R:-:RDU:GND:RDU_W:GND:6501:6577
+Raleigh- Clearance:Raleigh Clearance:120.100:5D:-:RDU:DEL:RDU:DEL:6501:6577
+;
+; ******************
+; ORF TRACON (6)
+; ******************
+Newport News- Clearance:Newport Clearance:121.650:6F:-:PHF:DEL:PHF:DEL:6240:6257
+Newport News- Ground:Newport Ground:121.900:6H:-:PHF:GND:PHF:GND:6240:6257
+Newport News- Tower:Newport Tower:118.700:6P:T:PHF:TWR:PHF:TWR:6240:6257
+Norfolk- Clearance:Norfolk Clearance:118.500:6E:-:ORF:DEL:ORF:DEL:6201:6277
+Norfolk- Ground:Norfolk Ground:121.900:6E:-:ORF:GND:ORF:GND:6201:6277
+Norfolk- Tower:Norfolk Tower:120.800:6T:T:ORF:TWR:ORF:TWR:6201:6277
+Norfolk- Departure Radar One (DR-1):Norfolk Departure:125.200:6G:G:ORF:DEP:ORF_G:DEP:6201:6257
+Norfolk- West Feeder Radar (WFR):Norfolk Approach:119.450:6W:W:ORF:APP:ORF_W:APP:6201:6257 
+Norfolk- South Feeder Radar (SFR):Norfolk Approach:127.900:6S:S:ORF:APP:ORF_S:APP:6201:6257  
+Norfolk- East Feeder Radar (EFR):Norfolk Approach:126.050:6E:E:ORF:APP:ORF_E:APP:6201:6217  
+Norfolk- Arrival Radar One (AR-1):Norfolk Approach:118.900:6R:R:ORF:APP:ORF_R:APP:6201:6257 
+Norfolk- Peninsula Sector Radar (PSR):Norfolk Departure:125.700:6P:P:ORF:DEP:ORF_P:DEP:6201:6257 
+Oceana NAS- North Approach:Oceana Approach:123.900:6J:J:NTU:APP:NTU:NORTH:6220:6257
+Oceana NAS- South Approach:Oceana Approach:119.600:6K:K:NTU:APP:NTU:SOUTH:6220:6257
+Oceana NAS- Tower:Oceana Tower:120.870:6I:T:NTU:TWR:NTU:TWR:6220:6237
+Norfolk NAS Tower:Chambers Tower:124.300:Q4:T:NGU:TWR:NGU:TWR:6260:6277
+Norfolk NAS Ground:Chambers Ground:121.800:Q5:-:NGU:GND:NGU:GND:6260:6277
+;
+; *******************
+; Patuxent RAPCON (7)
+; *******************
+Patuxent NAS- West:Patuxent Approach:120.050:7D:D:NHK:APP:NHK:WEST:1360:1377
+Patuxent NAS- East:Patuxent Approach:127.950:7E:E:NHK:APP:NHK:EAST:1360:1377
+Patuxent NAS- Tower:Patuxent Tower:123.700:7T:T:NHK:TWR:NHK:TWR:1360:1377
+Patuxent NAS- Ground:Patuxent Ground:120.600:7G:-:NHK:GND:NHK:GND:1360:1377
+Patuxent NAS- Clearance:Patuxent Clearance:135.200:7C:-:NHK:DEL:NHK:DEL:1360:1377
+Salisbury- Tower:Salisbury Tower:119.420:7S:T:SBY:TWR:SBY:TWR:5501:5517
+Salisbury- Ground:Salisbury Ground:123.770:7L:-:SBY:GND:SBY:GND:5501:5517
+Salisbury- Clearance:Salisbury Clearance:118.550:7Y:-:SBY:DEL:SBY:DEL:5501:5517
+Webster NOF:Navy Webster Tower:126.200:Q5:T:NUI:TWR:NUI:TWR:5520:5537
+;
+; ******************
+; Roanoke TRACON (8)
+; ******************
+Roanoke- East Approach:Roanoke Approach:126.900:8E:E:ROA:APP:ROA:EAST:6540:6557
+Roanoke- West Approach:Roanoke Approach:118.150:8W:W:ROA:APP:ROA:WEST:6540:6557
+Roanoke- Alternate Radar:Roanoke Approach:135.000:8J:J:ROA:APP:ROA:ALT:6540:6557
+Roanoke- Tower:Roanoke Tower:118.300:8T:T:ROA:TWR:ROA:TWR:6540:6557
+Roanoke- Ground:Roanoke Ground:121.900:8G:-:ROA:GND:ROA:GND:6540:6557
+Roanoke- Clearance:Roanoke Clearance:119.700:8C:-:ROA:DEL:ROA:DEL:6540:6557
+Lynchburg- Tower:Lynchburg Tower:127.650:8L:T:LYH:TWR:LYH:TWR:5520:5537
+Lynchburg- Ground:Lynchburg Ground:121.900:8Y:-:LYH:GND:LYH:GND:5520:5537
+;
+; ************************
+; Atlantic City TRACON (9)
+; ************************
+Atlantic City- North Approach:Atlantic City Approach:134.250:9N:N:ACY:APP:ACY_N:APP:1340:1357
+Atlantic City- South Approach:Atlantic City Approach:124.600:9S:S:ACY:APP:ACY_S:APP:1340:1357
+Atlantic City- Tower:Atlantic City Tower:120.300:9T:T:ACY:TWR:ACY:TWR:1340:1357
+Atlantic City- Ground:Atlantic City Ground:121.900:9G:-:ACY:GND:ACY:GND:1340:1357
+Atlantic City- Clearance:Atlantic City Clearance:127.850:9D:-:ACY:DEL:ACY:DEL:1340:1357
+;
+; ***********************
+; Fayetteville TRACON (0)
+; ***********************
+Fayetteville- North Approach:Fayetteville Approach:125.150:0K:K:FAY:APP:FAY:NORTH:1360:1377
+Fayetteville- East Approach:Fayetteville Approach:133.000:0H:H:FAY:APP:FAY:EAST:1360:1377
+Fayetteville- West Approach:Fayetteville Approach:127.800:0I:I:FAY:APP:FAY:WEST:1360:1377
+Fayetteville- Departure:Fayetteville Departure:125.170:0D:D:FAY:DEP:FAY:DEP:1360:1377
+Fayetteville- Tower:Fayetteville Tower:118.300:0T:T:FAY:TWR:FAY:TWR:1360:1377
+Fayetteville- Ground:Fayetteville Ground:121.700:0G:-:FAY:GND:FAY:GND:1360:1377
+;
+; *******************************
+; Wilmington Approach Control (0)
+; *******************************
+Wilmington- North Approach:Wilmington Approach:135.750:0L:L:ILM:APP:ILM:NORTH:3520:3537
+Wilmington- South Approach:Wilmington Approach:118.250:0M:M:ILM:APP:ILM:SOUTH:3520:3537
+Wilmington- Tower:Wilmington Tower:119.900:0A:T:ILM:TWR:ILM:TWR:3520:3537
+Wilmington- Ground:Wilmington Ground:121.900:0B:-:ILM:GND:ILM:GND:3520:3537
+;
+; *************************
+; ZNY - New York Center (N)
+; *************************
+ZNY BRNAN:New York Center:124.770:N08:C:NY:CTR:ZNY:N08::
+ZNY Westminster:New York Center:134.320:N09:C:NY:CTR:ZNY:N09::
+ZNY Harrisburg:New York Center:133.470:N10:C:NY:CTR:ZNY:N10::
+ZNY Modena:New York Center:135.450:N25:C:NY:CTR:ZNY:N25::
+ZNY Lancaster:New York Center:120.020:N26:C:NY:CTR:ZNY:N26::
+ZNY Middletown:New York Center:132.200:N27:C:NY:CTR:ZNY:N27::
+;
+ZNY PARKE:New York Center:132.100:N39:C:NY:CTR:ZNY:N39::
+ZNY East Texas:New York Center:127.170:N42:C:NY:CTR:ZNY:N42::
+ZNY Yardley:New York Center:134.600:N55:C:NY:CTR:ZNY:N55::
+ZNY Kennedy:New York Center:125.320:N56:C:NY:CTR:ZNY:N56::
+ZNY DIXIE:New York Center:118.970:N68:C:NY:CTR:ZNY:N68::
+;
+ZNY Elmira:New York Center:132.170:N34:C:NY:CTR:ZNY:N34::
+ZNY Huguenot:New York Center:132.600:N35:C:NY:CTR:ZNY:N35::
+ZNY Sparta:New York Center:133.150:N36:C:NY:CTR:ZNY:N36::
+ZNY Stony Fork:New York Center:121.320:N49:C:NY:CTR:ZNY:N49::
+ZNY Binghamton:New York Center:133.350:N50:C:NY:CTR:ZNY:N50::
+ZNY Lake Henry:New York Center:134.450:N51:C:NY:CTR:ZNY:N51::
+;
+ZNY Selinsgrove:New York Center:127.770:N72:C:NY:CTR:ZNY:N72::
+ZNY Philipsburg:New York Center:132.870:N73:C:NY:CTR:ZNY:N73::
+ZNY Broadway:New York Center:132.150:N74:C:NY:CTR:ZNY:N74::
+ZNY Milton:New York Center:128.570:N75:C:NY:CTR:ZNY:N75::
+ZNY Williamsport:New York Center:134.800:N91:C:NY:CTR:ZNY:N91::
+ZNY Pottstown:New York Center:124.620:N92:C:NY:CTR:ZNY:N92::
+ZNY Swissdale:New York Center:123.620:N93:C:NY:CTR:ZNY:N93::
+ZNY MANTA:New York Center:128.300:N66:C:NY:CTR:ZNY:N66::
+ZNY PAEPR:New York Center:126.020:N82:C:NY:CTR:ZNY:N82::
+ZNY HANRI:New York Center:133.520:N83:C:NY:CTR:ZNY:N83::
+;
+; *************************
+; ZNY - New York Oceanic (N)
+; *************************
+ZNY JOBOC:New York Center:125.920:N65:C:NY:CTR:ZNY:N65::
+ZNY COCOA:New York Center:119.100:N80:C:NY:CTR:ZNY:N80::
+ZNY HILDY:New York Center:128.500:N81:C:NY:CTR:ZNY:N81::
+ZNY Atlantic:New York Center:133.500:N86:C:NY:CTR:ZNY:N86::
+ZNY Apollo:New York Radio:130.500:NA:C:NY:FSS:ZNY:NA::
+ZNY Gemini:New York Radio:130.600:NG:C:NY:FSS:ZNY:NG::
+ZNY Mercury:New York Radio:130.900:NM:C:NY:FSS:ZNY:NM::
+ZNY CHAMP:New York Radio:130.000:N87:C:NY:FSS:ZNY:N87::
+ZNY BACUS:New York Radio:130.100:N88:C:NY:FSS:ZNY:N88::
+ZNY KRAFT:New York Radio:130.200:N89:C:NY:FSS:ZNY:N89::
+ZNY GRATX:New York Radio:130.300:N90:C:NY:FSS:ZNY:N90::
+;
+; **********************
+; ZNY - New York N90 (N)
+; **********************
+;
+;**************************
+;New York TRACON - LGA Area
+;**************************
+;
+N90 - N90 LGA EMPYR (D):New York Approach:127.300:N1D:D:NY:APP:N90LGA:N1D:
+N90 - N90 LGA Final Vector (F):New York Approach:134.950:N1F:F:NY:APP:N90LGA:N1F:
+N90 - N90 LGA Dep (L):New York Departure:120.400:N1L:L:NY:DEP:N90LGA:N1L:
+N90 - N90 LGA HAARP (V):New York Approach:120.800:N1V:V:NY:APP:N90LGA:N1V:
+N90 - N90 LGA NOBBI (X):New York Approach:126.400:N1X:X:NY:APP:N90LGA:N1X:
+N90 - N90 LGA NYACK (Y):New York Departure:120.550:N1Y:Y:NY:DEP:N90LGA:N1Y:
+;
+;**************************
+;New York TRACON - JFK Area
+;**************************
+;
+N90 - N90 JFK Final Vector (A):New York Approach:132.400:N2A:A:NY:APP:N90JFK:N2A:
+N90 - N90 JFK CAMRN (G):New York Approach:128.120:N2G:G:NY:APP:N90JFK:N2G:
+N90 - N90 JFK Dep (J):New York Departure:135.900:N2J:J:NY:DEP:N90JFK:N2J:
+N90 - N90 JFK ROBER (K):New York Approach:125.700:N2K:K:NY:APP:N90JFK:N2K:
+N90 - N90 JFK ROBER Satellite (S):New York Approach:118.400:N2S:S:NY:APP:N90JFK:N2S:
+;
+;**************************
+;New York TRACON - ISP Area
+;**************************
+N90 - N90 ISP BEADS High (B):New York Approach:125.970:N3B:B:NY:APP:N90ISP:N3B:
+N90 - N90 ISP Calverton (E):New York Approach:118.000:N3E:E:NY:APP:N90ISP:N3E:
+N90 - N90 ISP Islip (H):New York Approach:120.050:N3H:H:NY:APP:N90ISP:N3H:
+N90 - N90 ISP LOVES (I):New York Approach:124.070:N3I:I:NY:APP:N90ISP:N3I:
+N90 - N90 ISP BEADS Low (N):New York Approach:118.950:N3N:N:NY:APP:N90ISP:N3N:
+N90 - N90 ISP SEALL (R):New York Approach:133.100:N3R:R:NY:DEP:N90ISP:N3R:
+N90 - N90 ISP VIKKY (Z):New York Approach:128.620:N3Z:Z:NY:DEP:N90ISP:N3Z:
+;
+;**************************
+;New York TRACON - EWR Area
+;**************************
+;
+N90 - N90 EWR North Arrival (A):New York Approach:120.150:N4A:A:NY:APP:N90EWR:N4A:
+N90 - N90 EWR METRO (H):New York Approach:132.800:N4H:H:NY:APP:N90EWR:N4H:
+N90 - N90 EWR Final Vector (Q):New York Approach:125.500:N4Q:Q:NY:APP:N90EWR:N4Q:
+N90- N90 EWR Dep (N):New York Departure:119.200:N4N:N:NY:DEP:N90EWR:N4N:
+N90 - N90 EWR Yardley (P):New York Approach:128.550:N4P:P:NY:APP:N90EWR:N4P:
+N90 - N90 EWR MUGZY (U):New York Approach:127.600:N4U:U:NY:APP:N90EWR:N4U:
+N90 - N90 EWR ZEEBO (S):New York Approach:123.770:N4S:S:NY:APP:N90EWR:N4S:
+;
+;**************************
+;New York TRACON - LIB Area
+;**************************
+;
+N90 - N90 LIB North (2):New York Departure:118.170:N52:2:NY:DEP:N90LIB:N52:
+N90 - N90 LIB West (4):New York Departure:120.850:N54:4:NY:DEP:N90LIB:N54:
+N90 - N90 LIB East (6):New York Departure:126.800:N56:6:NY:DEP:N90LIB:N56:
+N90 - N90 LIB South (8):New York Departure:124.750:N58:8:NY:DEP:N90LIB:N58:
+N90 - N90 LIB Catskill (9):New York Approach:132.750:N5H:9:NY:APP:N90LIB:N5H:
+;
+; *****************************
+; ZNY - Philadelphia TRACON (P)
+; *****************************
+;
+PHL- PHL TRACON North Dep (E):Philadelphia Departure:124.350:P6E:E:PHL:DEP:PHL:P6E:
+PHL- PHL TRACON North High (H):Philadelphia Departure:126.070:P6H:H:PHL:DEP:PHL:P6H:
+PHL- PHL TRACON South Dep (V):Philadelphia Departure:119.750:P6V:V:PHL:DEP:PHL:P6V:
+PHL- PHL TRACON South High (J):Philadelphia Departure:126.600:P6J:J:PHL:DEP:PHL:P6J:
+PHL- PHL TRACON North Arrival (N):Philadelphia Approach:128.400:P6N:N:PHL:APP:PHL:P6N:
+PHL- PHL TRACON South Arrival (S):Philadelphia Approach:133.870:P6S:S:PHL:APP:PHL:P6S:
+PHL- PHL TRACON Final Vectors 1 (F):Philadelphia Approach:125.400:P6F:F:PHL:APP:PHL:P6F:
+PHL- PHL TRACON Final Vectors 2 (L):Philadelphia Approach:132.670:P6L:L:PHL:APP:PHL:P6L:
+PHL- PHL TRACON Pottstown (P):Philadelphia Approach:126.850:P6P:P:PHL:APP:PHL:P6P:
+PHL- PHL TRACON Yardley (Y):Philadelphia Approach:123.800:P6Y:Y:PHL:APP:PHL:P6Y:
+PHL- PHL TRACON Woodstown (W):Philadelphia Approach:127.350:P6W:W:PHL:APP:PHL:P6W:
+PHL- PHL TRACON Dupont (D):Philadelphia Approach:118.350:P6D:D:PHL:APP:PHL:P6D:
+;
+; ***********************
+; ZBW - Boston Center (B)
+; ***********************
+
+; Area A
+ZBW Watertown Low:Boston Center:135.250:B08:C:BOS:CTR:ZBW:B08::
+ZBW Utica High:Boston Center:123.870:B09:C:BOS:CTR:ZBW:B09::
+ZBW Rockdale Super High:Boston Center:124.120:B10:C:BOS:CTR:ZBW:B10::
+ZBW Albany Low:Boston Center:121.350:B22:C:BOS:CTR:ZBW:B22::
+ZBW Hancock Low:Boston Center:133.250:B23:C:BOS:CTR:ZBW:B23::
+ZBW Delancey High:Boston Center:126.470:B24:C:BOS:CTR:ZBW:B24::
+; Area B
+ZBW Gardner Low:Boston Center:123.750:B36:C:BOS:CTR:ZBW:B36::
+ZBW Concord Low:Boston Center:134.700:B37:C:BOS:CTR:ZBW:B37::
+ZBW ATHENS High:Boston Center:135.320:B38:C:BOS:CTR:ZBW:B38::
+ZBW Cambridge High:Boston Center:128.320:B39:C:BOS:CTR:ZBW:B39::
+ZBW Montpelier Low:Boston Center:135.700:B52:C:BOS:CTR:ZBW:B52::
+ZBW Plattsburgh High:Boston Center:118.820:B53:C:BOS:CTR:ZBW:B53::
+; Area C
+ZBW Hampton High:Boston Center:124.520:B31:C:BOS:CTR:ZBW:B31::
+ZBW SARDI Low:Boston Center:135.800:B32:C:BOS:CTR:ZBW:B32::
+ZBW ERICK Low:Boston Center:132.300:B33:C:BOS:CTR:ZBW:B33::
+ZBW Providence Low:Boston Center:124.850:B34:C:BOS:CTR:ZBW:B34::
+ZBW Boston High:Boston Center:126.220:B46:C:BOS:CTR:ZBW:B46::
+ZBW BOSOX Low:Boston Center:133.420:B47:C:BOS:CTR:ZBW:B47::
+ZBW Southee High:Boston Center:132.300:B49:C:BOS:CTR:ZBW:B49::
+; Area D
+ZBW Millinocket High:Boston Center:128.050:B01:C:BOS:CTR:ZBW:B01::
+ZBW Augusta High:Boston Center:134.950:B02:C:BOS:CTR:ZBW:B02::
+ZBW SURRY Low:Boston Center:124.750:B15:C:BOS:CTR:ZBW:B15::
+ZBW PARSO Low:Boston Center:128.200:B16:C:BOS:CTR:ZBW:B16::
+ZBW Nantucket Low:Boston Center:133.450:B17:C:BOS:CTR:ZBW:B17::
+ZBW Cape Low:Boston Center:128.750:B18:C:BOS:CTR:ZBW:B18::
+; Area E
+ZBW Stewart Low:Boston Center:134.300:B05:C:BOS:CTR:ZBW:B05::
+ZBW Pawling Low:Boston Center:128.100:B06:C:BOS:CTR:ZBW:B06::
+ZBW Chester Low:Boston Center:127.650:B07:C:BOS:CTR:ZBW:B07::
+ZBW Danbury Low:Boston Center:134.000:B19:C:BOS:CTR:ZBW:B19::
+ZBW Kingston High:Boston Center:125.570:B20:C:BOS:CTR:ZBW:B20::
+ZBW CANAN Low:Boston Center:132.650:B21:C:BOS:CTR:ZBW:B21::
+;
+; ************************
+; ZTL - Atlanta Center (A)
+; ************************
+
+;Area 1
+ZTL Salem 42 High:Atlanta Center:120.720:A42:C:ATL:CTR:Salem High:ZTL 42::
+ZTL Pulaski 43 High:Atlanta Center:132.970:A43:C:ATL:CTR:Pulaski High:ZTL 43::
+ZTL Shine 44 Low:Atlanta Center:132.620:A44:C:ATL:CTR:Shine Low:ZTL 44::
+ZTL Bristol 45 Low:Atlanta Center:127.850:A45:C:ATL:CTR:Bristol Low:ZTL 45::
+ZTL Moped 47 Low:Atlanta Center:134.550:A47:C:ATL:CTR:Moped Low:ZTL 47::
+ZTL Wilkes 48 Ultra Low:Atlanta Center:125.150:A48:C:ATL:CTR:Wilkes Ultra Low:ZTL 48::
+
+;Area 2
+ZTL Leeon 29 Low:Atlanta Center:128.800:A29:C:ATL:CTR:Leeon Low:ZTL 29::
+ZTL Locas 30 Low:Atlanta Center:133.150:A30:C:ATL:CTR:Locas Low:ZTL 30::
+ZTL Unarm 31 Low:Atlanta Center:135.350:A31:C:ATL:CTR:Unarm Low:ZTL 31::
+ZTL Spartanburg 32 High:Atlanta Center:125.620:A32:C:ATL:CTR:Spartanburg High:ZTL 32::
+ZTL Charlotte 33 Hi:Atlanta Center:124.420:A33:C:ATL:CTR:Charlotte High:ZTL 33::
+ZTL Georgia 34 High:Atlanta Center:120.420:A34:C:ATL:CTR:Georgia High:ZTL 34::
+ZTL High Rock 28 Ultra High:Atlanta Center:125.020:A28:C:ATL:CTR:High Rock Ultra High:ZTL 28::
+
+;Area 3
+ZTL East Departure 16 Low:Atlanta Center:134.200A16:C:ATL:CTR:East Departure Low:ZTL 16::
+ZTL Logen 49 Low:Atlanta Center:121.350:A49:C:ATL:CTR:Logen Low:ZTL 49::
+ZTL Commerce 18 Ultra Low:Atlanta Center:134.800:A18:C:ATL:CTR:Commerce Ultra Low:ZTL 18::
+ZTL Lanier 50 High:Atlanta Center:124.370:A50:C:ATL:CTR:Lanier High:ZTL 50::
+ZTL Baden 15 Ultra High:Atlanta Center:126.770:A15:C:ATL:CTR:Baden Ultra High:ZTL 15::
+
+;Area 4
+ZTL Sinca 19 Low:Atlanta Center:123.950:A19:C:ATL:CTR:Sinca Low:ZTL 19::
+ZTL South Departure 21 Low:Atlanta Center:134.500:A21:C:ATL:CTR:South Departure Low:ZTL 21::
+ZTL Augusta 24 Low:Atlanta Center:128.100:A24:C:ATL:CTR:Augusta Low:ZTL 24::
+ZTL Dublin 20 High:Atlanta Center:126.420:A20:C:ATL:CTR:Dublin High:ZTL 20::
+ZTL Macon 22 High:Atlanta Center:119.370:A22:C:ATL:CTR:Macon High:ZTL 22::
+ZTL Clark Hill 23 Ultra High:Atlanta Center:124.320:A23:C:ATL:CTR:Clark Hill Ultra High:ZTL 23::
+ZTL Hampton 27 Ultra High:Atlanta Center:125.820:A27:C:ATL:CTR:Hampton 27 Ultra High:ZTL 27::
+
+;Area 5
+ZTL Tiroe 09 Low:Atlanta Center:120.450:A09:C:ATL:CTR:Tiroe 09 Low:ZTL 09::
+ZTL Birmingham 12 Low:Atlanta Center:127.300:A12:C:ATL:CTR:Birmingham Low:ZTL 12::
+ZTL Montgomery 13 Low:Atlanta Center:120.550:A13:C:ATL:CTR:Montgomery Low:ZTL 13::
+ZTL Maxwell 14 Low:Atlanta Center:132.250:A14:C:ATL:CTR:Maxwell Low:ZTL 14::
+ZTL LaGrange 10 High:Atlanta Center:125.570:A10:C:ATL:CTR:LaGrange High:ZTL 10::
+ZTL Monroeville 11 High:Atlanta Center:128.020:A11:C:ATL:CTR:Monroeville High:ZTL 11::
+ZTL Martin Lake 08 Ultra High:Atlanta Center:125.870:A08:C:ATL:CTR:Martin Lake Ultra High:ZTL 08::
+
+;Area 6
+ZTL West Departure 04 Low:Atlanta Center:134.950:A04:C:ATL:CTR:West Departure Low:ZTL 04::
+ZTL Dalas 05 Low:Atlanta Center:132.050:A05:C:ATL:CTR:Dalas Low:ZTL 05::
+ZTL Rome 01 Ultra Low:Atlanta Center:135.170:A01:C:ATL:CTR:Rome Ultra Low:ZTL 01::
+ZTL Gadsden 03 High:Atlanta Center:128.720:A03:C:ATL:CTR:Gadsden High:ZTL 03::
+ZTL Rocket 06 Ultra High:Atlanta Center:133.170:A06:C:ATL:CTR:Rocket Ultra High:ZTL 06::
+ZTL Gunter 02 Ultra High:Atlanta Center:126.820:A02:C:ATL:CTR:Gunter Ultra High:ZTL 02::
+
+;Area 7
+ZTL North Departure 38 Low:Atlanta Center:133.100:A38:C:ATL:CTR:North Departure Low:ZTL 38::
+ZTL Hinch Mountain 41 Low:Atlanta Center:133.600:A41:C:ATL:CTR:Hinch Mountain Low:ZTL 41::
+ZTL Crossville 37 High:Atlanta Center:126.670:A37:C:ATL:CTR:Crossville High:ZTL 37::
+ZTL Burne 39 High:Atlanta Center:125.920:A39:C:ATL:CTR:Burne High:ZTL 39::
+ZTL Allatoona 36 Ultra High:Atlanta Center:124.870:A36:C:ATL:CTR:Allatoona Ultra High:ZTL 36::
+ZTL Blue Ridge 40 Ultra High:Atlanta Center:134.070:A40:C:ATL:CTR:Blue Ridge Ultra High:ZTL 40::
+
+; ***********************************
+; ZTL - Charlotte-Douglas TRACON (C1)
+; ***********************************
+;
+DR:Charlotte Departure:120.500:C1W:W:CLT:DEP:CLT:W:6301:6377
+DR:Charlotte Departure:120.500:C1W:W:CLT:APP:CLT:W:6301:6377
+DR:Charlotte Departure:124.000:C1E:E:CLT:DEP:CLT:E:6301:6377
+DR:Charlotte Departure:124.000:C1E:E:CLT:APP:CLT:E:6301:6377
+SAT:Charlotte Approach:134.750:C1N:N:CLT:APP:CLT:N:6301:6377
+SAT:Charlotte Approach:120.050:C1S:S:CLT:APP:CLT:S:6301:6377
+SAT:Charlotte Approach:128.325:C1Q:Q:CLT:APP:CLT:Q:6301:6377
+;
+ARW:Charlotte Approach:125.350:C1U:U:CLT:APP:CLT:U:6301:6377
+ARE:Charlotte Approach:126.150:C1H:H:CLT:APP:CLT:H:6301:6377
+FE:Charlotte Approach:127.700:C1A:A:CLT:APP:CLT:A:6301:6377
+FC:Charlotte Approach:119.000:C1M:M:CLT:APP:CLT:M:6301:6377
+FW:Charlotte Approach:132.700:C1F:F:CLT:APP:CLT:F:6301:6377
+;
+; **************************
+; ZOB - Cleveland Center (C)
+; **************************
+;
+C02 - Cleveland Center (L/Pandora/02):Cleveland Center:128.620:C02:C:CLE:CTR:CLE:C02::
+C03 - Cleveland Center (L/Marion/03):Cleveland Center:135.100:C03:C:CLE:CTR:CLE:C03::
+C04 - Cleveland Center (L/Mansfield/04):Cleveland Center:134.900:C04:C:CLE:CTR:CLE:C04::
+C06 - Cleveland Center (L/Briggs/06):Cleveland Center:120.600:C06:C:CLE:CTR:CLE:C06::
+C08 - Cleveland Center (L/Carleton/08):Cleveland Center:127.900:C08:C:CLE:CTR:CLE:C08::
+C12 - Cleveland Center (L/Lansing/12):Cleveland Center:126.750:C12:C:CLE:CTR:CLE:C12::
+C14 - Cleveland Center (L/Jackson/14):Cleveland Center:120.450:C14:C:CLE:CTR:CLE:C14::
+C15 - Cleveland Center (L/Litchfield/15):Cleveland Center:134.650:C15:C:CLE:CTR:CLE:C15::
+C16 - Cleveland Center (L/Flint/16):Cleveland Center:127.700:C16:C:CLE:CTR:CLE:C16::
+C20 - Cleveland Center (L/Dresden/20):Cleveland Center:132.250:C20:C:CLE:CTR:CLE:C20::
+C21 - Cleveland Center (L/Windsor/21):Cleveland Center:132.450:C21:C:CLE:CTR:CLE:C21::
+C31 - Cleveland Center (L/Rochester/31):Cleveland Center:127.470:C31:C:CLE:CTR:CLE:C31::
+C33 - Cleveland Center (L/Buffalo/33):Cleveland Center:125.200:C33:C:CLE:CTR:CLE:C33::
+C50 - Cleveland Center (L/Clarion/50):Cleveland Center:126.720:C50:C:CLE:CTR:CLE:C50::
+C53 - Cleveland Center (L/Indian Head/53):Cleveland Center:124.400:C53:C:CLE:CTR:CLE:C53::
+C55 - Cleveland Center (L/Morgantown/55):Cleveland Center:126.950:C55:C:CLE:CTR:CLE:C55::
+C70 - Cleveland Center (L/Dunkirk/55):Cleveland Center:127.070:C70:C:CLE:CTR:CLE:C70::
+C73 - Cleveland Center (L/Bradford/73):Cleveland Center:124.320:C73:C:CLE:CTR:CLE:C73::
+C75 - Cleveland Center (L/Youngstown/75):Cleveland Center:120.770:C75:C:CLE:CTR:CLE:C75::
+;
+C07 - Cleveland Center (H/Sandusky/07):Cleveland Center:127.670:C07:C:CLE:CTR:CLE:C07::
+C18 - Cleveland Center (H/Peck/07):Cleveland Center:133.870:C18:C:CLE:CTR:CLE:C18::
+C27 - Cleveland Center (H/Hudson/27):Cleveland Center:134.770:C27:C:CLE:CTR:CLE:C27::
+C28 - Cleveland Center (H/Detroit/28):Cleveland Center:135.720:C28:C:CLE:CTR:CLE:C28::
+C28 - Cleveland Center (H/Dansville/36):Cleveland Center:118.620:C36:C:CLE:CTR:CLE:C36::
+C37 - Cleveland Center (H/Geneseo/37):Cleveland Center:128.020:C37:C:CLE:CTR:CLE:C37::
+C48 - Cleveland Center (H/Ravenna/48):Cleveland Center:119.870:C48:C:CLE:CTR:CLE:C48::
+C57 - Cleveland Center (H/Breckville/57):Cleveland Center:125.870:C57:C:CLE:CTR:CLE:C57::
+C66 - Cleveland Center (H/Bellaire/66):Cleveland Center:125.420:C66:C:CLE:CTR:CLE:C66::
+C67 - Cleveland Center (H/Imperial/67):Cleveland Center:118.970:C67:C:CLE:CTR:CLE:C67::
+C77 - Cleveland Center (H/Warren/77):Cleveland Center:134.120:C77:C:CLE:CTR:CLE:C77::
+;
+C19 - Cleveland Center (SH/Gamble/19):Cleveland Center:126.520:C19:C:CLE:CTR:CLE:C19::
+C26 - Cleveland Center (SH/Lake/26):Cleveland Center:120.070:C26:C:CLE:CTR:CLE:C26::
+C29 - Cleveland Center (SH/Wayne/29):Cleveland Center:133.520:C29:C:CLE:CTR:CLE:C29::
+C38 - Cleveland Center (SH/Niagra/38):Cleveland Center:120.620:C38:C:CLE:CTR:CLE:C38::
+C39 - Cleveland Center (SH/Steuben/39):Cleveland Center:119.370:C39:C:CLE:CTR:CLE:C39::
+C47 - Cleveland Center (SH/Bluffton47):Cleveland Center:119.320:C47:C:CLE:CTR:CLE:C47::
+C49 - Cleveland Center (SH/Lorain/49):Cleveland Center:133.370:C49:C:CLE:CTR:CLE:C49::
+C59 - Cleveland Center (SH/Franklin/59):Cleveland Center:119.720:C59:C:CLE:CTR:CLE:C59::
+C68 - Cleveland Center (SH/Allegheny/68):Cleveland Center:118.970:C68:C:CLE:CTR:CLE:C68::
+C69 - Cleveland Center (SH/Clarksburg/69):Cleveland Center:135.170:C69:C:CLE:CTR:CLE:C69::
+;
+C45 - Cleveland Center (UH/Geauga/45):Cleveland Center:120.320:C45:C:CLE:CTR:CLE:C45::
+C46 - Cleveland Center (UH/Marblehead/46):Cleveland Center:135.370:C46:C:CLE:CTR:CLE:C46::
+C51 - Cleveland Center (UH/Palmer/51):Cleveland Center:121.070:C51:C:CLE:CTR:CLE:C51::
+C64 - Cleveland Center (UH/Keystone/64):Cleveland Center:134.470:C64:C:CLE:CTR:CLE:C64::
+C64 - Cleveland Center (UH/Keystone/64):Cleveland Center:134.470:C64:C:CLE:CTR:CLE:C64::
+C64 - Cleveland Center (UH/Jamestown/79):Cleveland Center:132.920:C79:C:CLE:CTR:CLE:C79::
+;
+; ***************************
+; ZOB - Clarksburg TRACON (z)
+; ***************************
+;
+Clarksburg East/Combined Approach:Clarksburg Approach:121.150:C5:Z:CKB:APP:CKB:AEA::
+Clarksburg West Approach:Clarksburg Approach:119.600:C6:Z:CKB:APP:CKB:AWE:::
+;
+; *****************************
+; ZID - Indianapolis Center (I)
+; *****************************
+;AREA 1
+;
+EVANSVILLE 17 (EVV LO):Indy Center:128.330:I17:C:IND:CTR:IND 17:CTR::
+NEW HOPE 19 (EWW LO):Indy Center:121.170:I19:C:IND:CTR:IND 17:CTR::
+POCKET CITY 81 (PXV HI):Indy Center:132.520:I81:C:IND:CTR:IND 81:CTR::
+LOUISVILLE 82 (LOU HI):Indy Center:133.050:I82:C:IND:CTR:IND 82:CTR::
+IMPEL 91 (IMP SH):Indy Center:127.020:I91:C:IND:CTR:IND 91:CTR:6:
+MYSTIC 92 (MYS SH):Indy Center:134.270:I92:C:IND:CTR:IND 92:CTR::
+;
+;AREA 2
+;
+LONDON 21 (LOZ LO):Indy Center:124.620:I21:C:IND:CTR:IND 21:CTR::
+HAZARD 25 (AZQ LO):Indy Center:126.570:I25:C:IND:CTR:IND 25:CTR::
+RIVER 26 (RIV LO):Indy Center:124.220:I26:C:IND:CTR:IND 26:CTR::
+REBEL 84 (RBL HI)Indy Center:134.670:I84:C:IND:CTR:IND 84:CTR::
+SOMERSET 94 (SME SH):Indy Center:126.920:I94:C:IND:CTR:IND 94:CTR::
+;
+;AREA 3
+;
+CHARLESTON 85 (CRW HI):Indy Center:119.520:I85:C:IND:CTR:IND 85:CTR::
+BOBCAT 79 (BOB IM):Indy Center:125.070:I79:C:IND:CTR:IND 79:CTR::
+HENDERSON 95 (HNN SH):Indy Center:120.270:I95:C:IND:CTR:IND 95:CTR::
+BECKLEY 86 (BKW HI):Indy Center:124.570:I86:C:IND:CTR:IND 86:CTR::
+BLUEFIELD 96 (BLF SH):Indy Center:134.220:I96:C:IND:CTR:IND 96:CTR::
+;
+;AREA 4
+;
+SHELBYVILLE 34 (SHB LO):Indy Center:119.550:I34:C:IND:CTR:IND 35:CTR::
+TERRE HAUTE 35 (HUF LO):Indy Center:132.200:I35:C:IND:CTR:IND 35:CTR::
+RUSHVILLE 75 (RSH SH):Indy Center:125.120:I75:C:IND:CTR:IND 75:CTR::
+KING 80 (KNG HI):Indy Center:134.170:I80:C:IND:CTR:IND 80:CTR::
+INDY 89 (IND HI):Indy Center:133.420:I89:C:IND:CTR:IND 89:CTR::
+WABASH 99 (WAB SH):Indy Center:132.770:I99:C:IND:CTR:IND 99:CTR::
+;
+;AREA 5
+;
+ROSEWOOD 32 (ROD LO):Indy Center:128.070:I32:C:IND:CTR:IND 32:CTR::
+COVINGTON 22 (CVG LO):Indy Center:123.920:I22:C:IND:CTR:IND 22:CTR::
+LYTLE 31 (LTL LO):Indy Center:120.470:I31:C:IND:CTR:IND 31:CTR::
+MUNCIE 33 (MIE LO):Indy Center:124.520:I33:C:IND:CTR:IND 33:CTR::
+DAYTON 88 (DAY HI):Indy Center:120.570:I88:C:IND:CTR:IND 88:CTR::
+SPRINGFIELD 78 (SGH IM):Indy Center:135.800:I78:C:IND:CTR:IND 78:CTR::
+PATTERSON 98 (FFO SH):Indy Center:128.770:I98:C:IND:CTR:IND 98:CTR::
+;
+;AREA 6
+;
+COLUMBUS 30 (CMH LO):Indy Center:124.800:I30:C:IND:CTR:IND 30:CTR::
+YORK 23 (YRK LO):Indy Center:134.000:I23:C:IND:CTR:IND 23:CTR::
+PARKERSBURG 24 (PKB LO):Indy Center:127.100:I24:C:IND:CTR:IND 24:CTR::
+PIKE 69 (PIK LO):Indy Center:135.570:I69:C:IND:CTR:IND 69:CTR::
+APPLETON 87 (APE HI):Indy Center:132.820:I87:C:IND:CTR:IND 87:CTR::
+UNIVERSITY 77 (UNV HI):Indy Center:125.070:I77:C:IND:CTR:IND 77:CTR::
+LOCKBOURNE 97 (LCK SH):Indy Center:133.770:I97:C:IND:CTR:IND 97:CTR::
+;
+;AREA 7
+;
+NABB 18 (ABB LO):Indy Center:124.770:I18:C:IND:CTR:IND 18:CTR::
+LEXINGTON 20 (LEX LO):Indy Center:126.370:I20:C:IND:CTR:IND 20:CTR::
+MADISON 66 (MAD HI):Indy Center:128.370:I66:C:IND:CTR:IND 66:CTR::
+FALMOUTH 83 (FLM HI):Indy Center:128.220:I83:C:IND:CTR:IND 83:CTR::
+BATESVILLE 76 (BTV SH):Indy Center:134.700:I76:C:IND:CTR:IND 76:CTR::
+DACOS 93 (DAC SH):Indy Center:123.770:I93:C:IND:CTR:IND 93:CTR::
+HOOSIER 70 (OOM SH):Indy Center:134.700:I70:C:IND:CTR:IND 70:CTR::
+;
+
+; *****************************
+; ZJX - Jacksonville Center (J)
+; *****************************
+; HIGH
+
+ZJX NEPTA R30:Jacksonville Center:135.925:J30:C:JAX:CTR:ZJX:30:1001:1077
+ZJX GENEVA R33:Jacksonville Center:125.050:J33:C:JAX:CTR:ZJX:33:1001:1077
+ZJX TORRY R35:Jacksonville Center:134.850:J35:C:JAX:CTR:ZJX:35:1001:1077
+ZJX AIKEN R66:Jacksonville Center:127.875:J66:C:JAX:CTR:ZJX:66:1001:1077
+
+ZJX Brewton R11:Jacksonville Center:124.475:J11:C:JAX:CTR:ZJX:11:1001:1077
+ZJX MAYO R16:Jacksonville Center:125.175:J16:C:JAX:CTR:ZJX:16:1001:1077
+ZJX ALMA R50:Jacksonville Center:135.970:J50:C:JAX:CTR:ZJX:50:1001:1077
+ZJX METTA R52:Jacksonville Center:135.050:J52:C:JAX:CTR:ZJX:52:1001:1077
+ZJX ST. AUGUSTINE R58:Jacksonville Center:126.350:J58:C:JAX:CTR:ZJX:58:1001:1077
+ZJX STATES R68:Jacksonville Center:126.125:J68:C:JAX:CTR:ZJX:68:1001:1077
+ZJX GREEN COVE R75:Jacksonville Center:127.470:J75:C:JAX:CTR:ZJX:75:1001:1077
+
+; LOW
+ZJX CRESTVIEW R10:Jacksonville Center:120.200:J10:C:JAX:CTR:ZJX:10:1001:1077
+ZJX ASHBURN R13:Jacksonville Center:134.450:J13:C:JAX:CTR:ZJX:13:1001:1077
+ZJX OCALA R15:Jacksonville Center:133.325:J15:C:JAX:CTR:ZJX:15:1001:1077
+ZJX BRUNSWICK R53:Jacksonville Center:126.750:J53:C:JAX:CTR:ZJX:53:1001:1077
+ZJX ST.JOHN R57:Jacksonville Center:134.000:J57:C:JAX:CTR:ZJX:57:1001:1077
+ZJX CHARLESTON R74:Jacksonville Center:134.375:J74:C:JAX:CTR:ZJX:74:1001:1077
+
+; ULTRAHIGH
+ZJX KNEMO R51:Jacksonville Center:120.125:J51:C:JAX:CTR:ZJX:51:1001:1077
+
+
+;
+; *****************************
+; ZJX - Myrtle Beach TRACON (Z)
+; *****************************
+Jacksonville- Myrtle Beach East:Myrtle Approach:119.200:ZM:M:MYR:APP:MYR:EAST
+Jacksonville- Myrtle Beach West:Myrtle Approach:127.400:ZY:M:MYR:APP:MYR:WEST
+;
+; *****************************
+; ZDC - Military Facilities (M)
+; *****************************
+Andrews AFB- Tower:Andrews Tower:118.400:MA:T:ADW:TWR:ADW:TWR:3701:3717
+Andrews AFB- Ground:Andrews Ground:121.800:MB:-:ADW:GND:ADW:GND:3701:3717
+Andrews AFB- Clearance:Andrews Clearance:127.550:MC:-:ADW:DEL:ADW:DEL:3701:3717
+;
+Cherry Point MCAS- East Approach:Cherry Point Approach:132.570:M7:7:NKT:APP:NKT:EAST:3720:3737
+Cherry Point MCAS- West Approach:Cherry Point Approach:119.350:M9:9:NKT:APP:NKT:WEST:3720:3737
+Cherry Point MCAS- PAR:Cherry Point Approach:124.100:M8:8:NKT:APP:NKT:PAR:3720:3737
+Cherry Point MCAS- Tower:Cherry Point Tower:121.300:MD:T:NKT:TWR:NKT:TWR:3720:3737
+Cherry Point MCAS- Ground:Cherry Point Ground:128.620:ME:-:NKT:GND:NKT:GND:3720:3737
+Cherry Point MCAS- Clearance:Cherry Point Clearance:125.950:MF:-:NKT:DEL:NKT:DEL:3720:3737
+;
+New River MCAS- Tower:New River Tower:120.000:MR:T:NCA:TWR:NCA:TWR::
+New River MCAS- Ground:New River Ground:121.800:MS:-:NCA:GND:NCA:GND::
+;
+Quantico MCAF- Tower:Quantico Tower:118.600:MT:T:NYG:TWR:NYG:TWR::
+Quantico MCAF- Ground:Quantico Ground:121.750:MU:T:NYG:TWR:NYG:TWR::
+;
+PCT Washington- Davison AFB:Potomac Approach:118.100:M0:0:DAA:APP:DAA:PAR::
+Davison AFB- Tower:Davison Tower:126.300:MO:T:DAA:TWR:DAA:TWR::
+Davison AFB- Ground:Davison Ground:121.900:MP:-:DAA:GND:DAA:GND::
+;
+Dover AFB- Approach:Dover Approach:132.420:M5:5:DOV:APP:DOV:APP:3740:3757
+Dover AFB- Departure:Dover Departure:128.000:M6:6:DOV:DEP:DOV:DEP:3740:3757
+Dover AFB- Tower:Dover Tower:126.350:MG:T:DOV:TWR:DOV:TWR:3740:3757
+Dover AFB- Ground:Dover Ground:121.900:MH:-:DOV:GND:DOV:GND:3740:3757
+Dover AFB- Clearance:Dover Clearance:128.550:MI:-:DOV:DEL:DOV:DEL:3740:3757
+;
+Pope AFB- Tower:Pope Tower:124.550:MM:T:POB:TWR:POB:TWR::
+Pope AFB- Ground:Pope Ground:125.020:MN:-:POB:GND:POB:GND::
+;
+Seymour Johnson AFB- North Approach:Seymour Johnson Approach:123.700:M2:2:GSB:APP:GSB:NORTH:3760:3777
+Seymour Johnson AFB- South Approach:Seymour Johnson Approach:119.700:M4:4:GSB:APP:GSB:SOUTH:3760:3777
+Seymour Johnson AFB- PAR:Seymour Johnson Approach:125.700:M3:3:GSB:APP:GSB:PAR:3760:3777
+Seymour Johnson AFB- Tower:Seymour Johnson Tower:126.250:MJ:T:GSB:TWR:GSB:TWR:3760:3777
+Seymour Johnson AFB- Ground:Seymour Johnson Ground:138.100:MK:-:GSB:GND:GSB:GND:3760:3777
+Seymour Johnson AFB- Clearance:Seymour Johnson Clearance:128.020:ML:-:GSB:DEL:GSB:DEL:3760:3777
+;
+Wallops Tower:Wallops Tower:126.500:M1:T:WAL:TWR:WAL:TWR:3760:3777
+;
+Navy Aircraft Carrier:AirBoss:135.800:Q2:T:CVN:TWR:AIR:BOSS::
+Navy Aircraft Carrier:AirBoss:135.800:Q3:T:CVN:APP:AIR:BOSS::
